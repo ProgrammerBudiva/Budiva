@@ -4889,3 +4889,27 @@ input[type='date']:focus::-webkit-clear-button {
 .page-template-builders .vacancy a:hover {
     color: #177ca3;
 }
+
+.logout-link {
+    font-size: 14px;
+    color: #177ca3;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: 3px solid #177ca3;
+    padding: 8px 25px;
+    border-radius: 20px;
+    transition: all 250ms linear;
+    -o-transition: all 250ms linear;
+    -moz-transition: all 250ms linear;
+    -webkit-transition: all 250ms linear;
+    margin: 25px auto 5px;
+    display: block;
+    background: none;
+    width: 230px;
+    text-align: center;
+}
+
+.logout-link:hover {
+    background: #177ca3;
+    color: #fff;
+}
