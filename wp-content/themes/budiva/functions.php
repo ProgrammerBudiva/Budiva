@@ -807,3 +807,8 @@ function active( &$active, $class = true ) {
 
     $active = false;
 }
+
+/* Отключаем админ панель для всех, кроме администраторов. */
+if (!current_user_can('administrator')):
+    show_admin_bar(false);
+endif;
