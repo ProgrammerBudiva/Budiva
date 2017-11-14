@@ -1,0 +1,1 @@
+<?= str_replace( array( '<table', '</table>' ), array( '<div class="table-responsive"><table', '</table></div>' ), $charasteristics['content'] ); ?>

@@ -1,0 +1,102 @@
+@media print {
+    .printSelected > * {
+        display: none !important;
+    }
+
+    .printSelected > .printSelection {
+        display: block !important;
+    }
+
+    a.mobile-logotype {
+        float: left;
+        width: 20% !important;
+        height: 44vw !important;
+        display: block !important;
+    }
+
+    .fixed-header, .menu-box-right, #menu-header-menu, .breadcrumbs, .type-form, .footer, #YMaps_0 {
+        display: none !important;
+    }
+
+    .mobile-header-phone, .mob-menu-right, .wrapper-menu-mobile, .mobile-search-line {
+        display: none !important;
+    }
+
+    a:after {
+        display: none !important;
+    }
+
+    .single-affiliate {
+        width: 100%;
+    }
+
+    .single-affiliate-map {
+        width: 100%;
+    }
+
+    .print-100 {
+        width: 100%;
+    }
+
+    .ymaps-image-with-content {
+        background-image: url(/wp-content/themes/budiva/img/map-label.png) !important;
+        background-size: 96px 63px !important;
+    }
+
+    .affiliate-data.print {
+        left: initial;
+        position: static;
+        width: 100%;
+    }
+
+    .affiliate-data.print .ymaps-map {
+        width: 100% !important;
+    }
+
+    .not-print {
+        display: none !important;
+    }
+
+    content {
+        display: none !important;
+    }
+
+    .only-print, .only-print * {
+        display: block !important;
+    }
+
+    #google_map,
+    .maps-container > table,
+    #wpfront-scroll-top-container,
+    body > div#jivo-iframe-container:not(.jivo-c-mobile),
+    body > div#jivo-iframe-container,
+    body > div#jivo-iframe-container:not(.jivo-c-mobile) *,
+    body > div#jivo-iframe-container *,
+    .maps-container > .google-map-after {
+        display: none !important;
+    }
+
+    .maps-container > table.map-print.active {
+        display: table !important;
+    }
+
+    .maps-container {
+        border: none;
+    }
+
+    .mobile-header {
+        display: block;
+    }
+
+    .mobile-header .link {
+        float: right;
+        margin-top: 30px;
+    }
+
+    .page-template-contact .lines span {
+        display: block;
+        height: 40px;
+        width: 100%;
+        border-bottom: 1px solid #888;
+    }
+}
