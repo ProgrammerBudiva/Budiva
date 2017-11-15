@@ -65,7 +65,6 @@ while( have_posts() ) : the_post();
 
                                     $title = get_post_meta( $attachment_id, 'media_popup_name', true );
                                     // $title = $image_title;
-
                                     printf( '<div class="slide"><a href="%s" title="%s" class="zoom" data-rel="prettyPhoto[product-gallery]">%s</a></div>', $image_link, $title, $image );
                                 endforeach; ?>
                             </div>
