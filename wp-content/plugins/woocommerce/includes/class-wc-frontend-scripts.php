@@ -217,7 +217,7 @@ class WC_Frontend_Scripts {
 				'version' => '4.1.1',
 			),
 			'prettyPhoto' => array( // deprecated.
-				'src'     => self::get_asset_url( 'assets/js/prettyPhoto/jquery.prettyPhoto' . $suffix . '.js' ),
+				'src'     => self::get_asset_url( 'assets/js/prettyPhoto/jquery.prettyPhoto.js' ),
 				'deps'    => array( 'jquery' ),
 				'version' => '3.1.6',
 			),
