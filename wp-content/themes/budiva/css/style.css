@@ -4915,7 +4915,21 @@ input[type='date']:focus::-webkit-clear-button {
 }
 
 @media screen and (max-width: 480px ){
+
     #wpfront-scroll-top-container {
         bottom:89px!important;
+    }
+
+    .category-slider .bx-viewport {
+        width: 95%!important;
+        margin: auto;
+    }
+
+    .manafacture a.bx-prev, .category-slider a.bx-prev {
+        left: -41px !important;
+    }
+
+    .category-slider a.bx-next {
+        right: -41px !important;
     }
 }
