@@ -897,7 +897,7 @@ function wp_get_attachment_image($attachment_id, $size = 'thumbnail', $icon = fa
 				$sizes = wp_calculate_image_sizes( $size_array, $src, $image_meta, $attachment_id );
 
 				if ( $srcset && ( $sizes || ! empty( $attr['sizes'] ) ) ) {
-					$attr['srcset'] = $srcset;
+					$attr['srcset'] = strtolower($srcset);
 
 					if ( empty( $attr['sizes'] ) ) {
 						$attr['sizes'] = $sizes;
