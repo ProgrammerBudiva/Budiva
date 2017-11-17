@@ -99,4 +99,20 @@
         width: 100%;
         border-bottom: 1px solid #888;
     }
+
+    .logo-box * {
+        visibility: hidden;
+    }
+
+    .globalClass_ET  {
+        display: none;
+    }
+
+    .mobile-header * {
+        visibility: hidden;
+    }
+
+    .text_eD * {
+        visibility: hidden;
+    }
 }
