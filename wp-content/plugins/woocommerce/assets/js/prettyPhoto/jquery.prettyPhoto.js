@@ -249,8 +249,8 @@
 
 						imgPreloader.onload = function(){
 							// Fit item to viewport
-							// pp_dimensions = _fitToViewport(imgPreloader.width,imgPreloader.height);
-							pp_dimensions = _fitToViewport(550);
+							pp_dimensions = _fitToViewport(imgPreloader.width,imgPreloader.height);
+							// pp_dimensions = _fitToViewport(550);
 
 							_showContent();
 						};
