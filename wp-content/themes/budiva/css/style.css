@@ -178,7 +178,7 @@ input[type="button"]:focus {
     background: #ffffff;
     position: fixed;
     width: 100%;
-    z-index: 99999;
+    z-index: 99998;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, .2);
 }
 
@@ -4932,4 +4932,8 @@ input[type='date']:focus::-webkit-clear-button {
     .category-slider a.bx-next {
         right: -41px !important;
     }
+}
+
+.pp_pic_holder {
+    z-index: 99999!important;
 }
