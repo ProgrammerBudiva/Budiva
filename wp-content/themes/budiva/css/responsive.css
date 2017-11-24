@@ -334,6 +334,14 @@
     section.advantages .single-advantage .content {
         text-align: left;
     }
+
+    .login-register-form .tab:first-child {
+        width: 50%;
+    }
+
+    .login-register-form .tab:last-child {
+        width: 50%;
+    }
 }
 
 @media screen and (max-width: 767px) {
