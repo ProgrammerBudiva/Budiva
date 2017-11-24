@@ -3920,9 +3920,9 @@ h6 {
     color: #337ab7;
 }
 
-.tax-product_cat .news-content a {
-    color: #2d9ada;
-}
+/*.tax-product_cat .news-content a {*/
+    /*color: #2d9ada;*/
+/*}*/
 
 .primary-header {
     text-transform: uppercase;
