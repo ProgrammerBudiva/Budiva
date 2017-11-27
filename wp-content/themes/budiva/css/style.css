@@ -2530,6 +2530,7 @@ li.header-menu-social-button.vk {
     font-size: 24px;
     font-weight: bold;
     text-decoration: none;
+    text-align: center;
 }
 
 .login-register-form .tab a:hover,
