@@ -1283,7 +1283,8 @@ input#subscribesubmit:hover {
 }
 
 .tabs-navigation {
-    height: 100px;
+    /*height: 100px;*/
+    height: auto;
 }
 
 .tabs-navigation .container {
@@ -1380,7 +1381,7 @@ input#subscribesubmit:hover {
 }
 
 .news-block {
-    margin: 40px auto;
+    margin:auto;
 }
 
 p.news-txt {
