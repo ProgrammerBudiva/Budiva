@@ -1,9 +1,11 @@
-.tiles:after {
-    content: '';
-    clear: both;
-    display: block;
-}
 
+@media screen and (min-width: 1024px) {
+    .tiles:after {
+        content: '';
+        clear: both;
+        display: block;
+    }
+}
 .tiles.have-cross {
     background: url(../img/header/XXX.png) repeat-y -21px center;
 }
