@@ -1382,6 +1382,7 @@ input#subscribesubmit:hover {
 
 .news-block {
     margin:auto;
+    padding-top: 65px;
 }
 
 p.news-txt {
