@@ -4,7 +4,7 @@ $count = count( $instructions );
 ?>
 
 <?php foreach( $instructions as $instruction ) : ?>
-
+<!--    echo "<pre>"; print_r($instruction); echo "</pre>";-->
     <?php $counter++; ?>
     <?php $type = explode( "/", get_post_mime_type( $instruction['file_id'] ) )[0]; ?>
 
