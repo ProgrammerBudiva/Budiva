@@ -55,7 +55,10 @@ jQuery(document).ready(function($) {
         var reg_mail = $('#com_email').val();
         var reg_phone = $('#account_telephone').val();
         var recaptcha = $('#g-recaptcha-response').val();
-        var delivery = $('#receive_delivery').is(":checked");
+        // var delivery = $('#receive_delivery').is(":checked");
+        if($('#receive_delivery').is(":checked") == true){
+            var delivery = $('#receive_delivery').val();
+        }
 
         data = {
             action: 'budiva_register_user',
