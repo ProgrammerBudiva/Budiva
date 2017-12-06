@@ -248,7 +248,7 @@
                 </div>
                 <div class="ftxt">
                     <label for="receive_delivery">
-                        <input id="receive_delivery" name="receive_delivery" type="checkbox" class="" checked="checked"/>
+                        <input id="receive_delivery" name="receive_delivery" type="checkbox" class="" value="on" checked="checked"/>
                         Получать рассылку
                     </label>
                 </div>
