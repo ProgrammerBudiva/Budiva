@@ -172,7 +172,10 @@ if ( !function_exists( 'wp_mail' ) ) :
  */
 function wp_mail( $to, $subject, $message, $headers = '', $attachments = array() ) {
 	// Compact the input, apply the filters, and extract them back out
+    $message_new = $message;
 
+    $verify_to = [];
+    preg_match('/@(.+)/',$to, $verify_to);
 	/**
 	 * Filters the wp_mail() arguments.
 	 *
@@ -181,8 +184,9 @@ function wp_mail( $to, $subject, $message, $headers = '', $attachments = array()
 	 * @param array $args A compacted array of wp_mail() arguments, including the "to" email,
 	 *                    subject, message, headers, and attachments values.
 	 */
-	$atts = apply_filters( 'wp_mail', compact( 'to', 'subject', 'message', 'headers', 'attachments' ) );
-
+	if($verify_to[1] !== 'budiva.ua') {
+        $atts = apply_filters('wp_mail', compact('to', 'subject', 'message', 'headers', 'attachments'));
+    }
 	if ( isset( $atts['to'] ) ) {
 		$to = $atts['to'];
 	}
@@ -1818,13 +1822,17 @@ function wp_new_user_notification( $user_id, $deprecated = null, $notify = '' ) 
 
 	$switched_locale = switch_to_locale( get_user_locale( $user ) );
 
-	$message = sprintf(__('Username: %s'), $user->user_login) . "\r\n\r\n";
-	$message .= __('To set your password, visit the following address:') . "\r\n\r\n";
-	$message .= '<' . network_site_url("wp-login.php?action=rp&key=$key&login=" . rawurlencode($user->user_login), 'login') . ">\r\n\r\n";
+    $message = sprintf(__('Username: %s'), $user->user_login) . "\r\n\r\n";
+    $message .='<br>'. __('To set your password, visit the following address:') . "\r\n\r\n";
+    $message .= "<br><br><a href='" . network_site_url("wp-login.php?action=rp&key=$key&login=" . rawurlencode($user->user_login), 'login') . "'>Установить пароль</a>\r\n\r\n";
+    $message = 'Поздравляем! Вы успешно зарегистрированы на сайте <a href="https://budiva.ua">budiva.ua</a>.<br><br>' . $message;
+    //$message .= wp_login_url() . "\r\n";
+    $headers = 'Content-Type: text/html; charset=UTF-8';
 
-	$message .= wp_login_url() . "\r\n";
+    $subject = sprintf(__('[%s] Your username and password info'), $blogname);
+    $subject = preg_replace("/[[]]/", "", $subject);
 
-	wp_mail($user->user_email, sprintf(__('[%s] Your username and password info'), $blogname), $message);
+    wp_mail($user->user_email, $subject, $message, $headers);
 
 	if ( $switched_locale ) {
 		restore_previous_locale();
