@@ -96,8 +96,10 @@ add_filter( 'authenticate', array( "Budiva", "auth_email_is_confirmed" ), 10, 2 
 add_action( 'woocommerce_edit_account_form', array( 'ExtraFields', 'edit_account_form' ) );
 add_action( 'woocommerce_save_account_details', array( 'ExtraFields', 'save_account_form' ) );
 
+$url = 'http://' . $_SERVER[ 'HTTP_HOST' ] . $_SERVER[ 'REQUEST_URI' ];
+$current_post_id = url_to_postid( $url );
 // Verify email
-if( is_page( 379 ) )
+if( $current_post_id == 379  )
     add_action( 'template_redirect', array( "Budiva", "page_email_confirm" ) );
 
 
