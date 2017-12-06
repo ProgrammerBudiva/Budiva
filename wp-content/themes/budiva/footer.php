@@ -51,6 +51,7 @@
 </div>
 
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.12/jquery.mask.js"></script>
 <script>
     (function($) {
         $(".header-menu-box-two .one").hover(
@@ -229,7 +230,7 @@
                 </div>
 
                 <div class="clear"></div>
-                <?= add_social( true ); ?>
+                <?php echo do_shortcode('[TheChamp-Login]') ?>
             </form>
 
             <form name="form" id="popup-register-form" method="post">
@@ -265,7 +266,6 @@
                 </div>
 
                 <div class="clear"></div>
-                <?= add_social( true ); ?>
             </form>
         </div>
     </div>

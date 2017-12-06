@@ -1,7 +1,7 @@
 <?php global $smof_data; ?>
 <div style="margin-left:10px;">
     <div style="width:340px; border-top:1px solid black; margin-bottom:15px;">
-        С найлучшими пожеланиями, команда
+        С наилучшими пожеланиями, команда
         <a style="color: #0077cc; text-decoration: none;" href='<?= get_home_url(); ?>'>budiva.ua</a>
     </div>
 
