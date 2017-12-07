@@ -8,9 +8,9 @@
     <table border="0" cellpadding="2" cellspacing="0" style="width:100%; margin-bottom:20px; max-width: 850px;">
         <tr>
             <th style="text-align:left;"></th>
-            <th style="text-align:left;">пн.-пт. с 09:00-18:00</th>
-            <th style="text-align:left;" colspan='2'>0(800)300-506 (бесплатный звонок)</th>
-            <th style="text-align:left;">
+            <th class="hide" style="text-align:left;">пн.-пт. с 09:00-18:00</th>
+            <th style="text-align:left;" colspan='2'>0(800)300-506</th>
+            <th class="hide" style="text-align:left;">
                 <a style="color:#000!important; text-decoration:none" href="mailto:info@budiva.ua">info@budiva.ua</a>
             </th>
         </tr>
@@ -28,20 +28,20 @@
         while( $the_query->have_posts() ) {
             $the_query->the_post();
             $meta = get_post_meta( $post->ID, '', true );
-
+            preg_match("/(.+); (.+)/", $meta['bgmp_phone'][0], $meta['bgmp_phone']);
             ?>
 
             <tr>
                 <th style="padding-top:10px; padding-right:5px; text-align:left;"><?= $meta['bgmp_city'][0]; ?></th>
-                <td style="padding-top:10px;"><?= $meta['bgmp_address'][0]; ?></td>
+                <td class="hide" style="padding-top:10px; "><?= $meta['bgmp_address'][0]; ?></td>
                 <td style="padding-top:10px;">
-                    <a style="color:#000!important; text-decoration:none" href="tel:<?= $meta['bgmp_phone'][0]; ?>">
-                        <?= $meta['bgmp_phone'][0]; ?>
+                    <a style="color:#000!important; text-decoration:none" href="tel:<?= $meta['bgmp_phone'][2]; ?>">
+                        <?= $meta['bgmp_phone'][2]; ?>
                     </a>
                 </td>
                 <td style="padding-top:10px;">
                 </td>
-                <td style="padding-top:10px;">
+                <td class="hide" style="padding-top:10px;">
                     <a style="color:#000!important; text-decoration:none" href="mailto:<?= $meta['bgmp_email'][0]; ?>">
                         <?= $meta['bgmp_email'][0]; ?>
                     </a>
@@ -73,3 +73,5 @@
         <div style="display:block; content:''; clear:both;"></div>
     </div>
 </div>
+</body>
+</html>
