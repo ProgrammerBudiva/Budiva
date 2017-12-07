@@ -3,7 +3,14 @@
 class Mail
 {
     public static function add_top_and_bottom( $args ) {
-        $message = "<div class='budiva-message' style='font-family: OpenSans, sans-serif;'>";
+        $message = "<!doctype html>
+<html xmlns=\"http://www.w3.org/1999/xhtml\">
+<head>
+<title></title><style>@media screen and (max-width:600px) {
+    .hide {
+        display:none;
+    }
+}</style></head><body><div class='budiva-message' style='font-family: OpenSans, sans-serif;'>";
         $message .= self::get_email_logo( true );
         $message .= "<div class='budiva-message-content' style='margin: 30px 0 30px 10px;'>";
         $message .= $args["message"];

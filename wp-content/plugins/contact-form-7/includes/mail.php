@@ -73,7 +73,8 @@ class WPCF7_Mail {
 			'</body>
 </html>', $this );
 
-		$html = $header . wpautop( $body ) . $footer;
+//		$html = $header . wpautop( $body ) . $footer;
+		$html = wpautop($body);
 		return $html;
 	}
 
