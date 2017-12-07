@@ -82,8 +82,8 @@ if( !is_user_logged_in() ) {
     add_action( 'wp_ajax_nopriv_budiva_register_user', array( "Ajax", "register_user" ) );
 
     // Send lost password to email
-    add_action( 'wp_ajax_lost_pwd', array( "Budiva", "lost_password" ) );
-    add_action( 'wp_ajax_nopriv_lost_pwd', array( "Budiva", "lost_password" ) );
+    add_action( 'wp_ajax_lost_pwd', array( "Ajax", "lost_password" ) );
+    add_action( 'wp_ajax_nopriv_lost_pwd', array( "Ajax", "lost_password" ) );
 }
 
 // AJAX tabs
