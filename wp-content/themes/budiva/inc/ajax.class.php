@@ -37,9 +37,9 @@ class Ajax
         if( !isset( $_POST['nonce'] ) || !wp_verify_nonce( $_POST['nonce'], 'budiva_new_user' ) )
             self::wr_response( 'Ooops, something went wrong, please try again later.' );
 
-        if( !self::recaptcha_verify( $_POST['recaptcha'] ) ) {
-            self::wr_response( "Нажмите на капчу." );
-        }
+//        if( !self::recaptcha_verify( $_POST['recaptcha'] ) ) {
+//            self::wr_response( "Нажмите на капчу." );
+//        }
 
         $username = sanitize_text_field( $_POST['user'] );
         $username = $email = sanitize_text_field( $_POST['mail'] );

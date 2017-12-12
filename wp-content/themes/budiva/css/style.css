@@ -1503,11 +1503,12 @@ p.news-txt {
     text-decoration: underline;
     margin-top: 10px;
     line-height: 31px;
-    font-weight: 600;
+    font-weight: 300;
+    font-size: 20px;
 }
 
 .about-icon {
-    padding: 50px;
+    padding: 25px;
     display: inline-block;
     text-transform: uppercase;
 }
@@ -3886,8 +3887,8 @@ section.advantages .single-advantage img {
 }
 
 .about-us-wrap .about-icon img {
-    width: 98px;
-    height: 91px;
+    width: 88px;
+    height: 81px;
 }
 
 h1, h2, h3, h4, h5, h6,
