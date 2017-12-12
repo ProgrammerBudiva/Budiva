@@ -1500,7 +1500,7 @@ p.news-txt {
 .about-icon a {
     display: block;
     color: #318cae;
-    text-decoration: underline;
+    /*text-decoration: underline;*/
     margin-top: 10px;
     line-height: 31px;
     font-weight: 300;
@@ -1508,7 +1508,7 @@ p.news-txt {
 }
 
 .about-icon {
-    padding: 25px;
+    padding: 73px 25px 50px;
     display: inline-block;
     text-transform: uppercase;
 }
