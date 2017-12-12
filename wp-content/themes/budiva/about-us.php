@@ -37,7 +37,10 @@ get_template_part( 'parts/underhead' ); ?>
                 <div class="about-icon">
                     <a itemprop="url" style="border:none;display:inline" href="<?= get_home_url(); ?>/o-nas/proizvoditeli/"><img src="<?= THEME_URI; ?>/img/manufacturer.gif" alt="Производители" /></a>
                     <a itemprop="url" href="<?= get_home_url(); ?>/o-nas/proizvoditeli/">Производители</a></div>
-                </div>
+                <div class="about-icon">
+                    <a itemprop="url" style="border:none;display:inline" href="<?= get_home_url(); ?>/o-nas/podryadchiki/"><img src="<?= THEME_URI; ?>/img/podryadchiki.png" alt="Рекомендуем подрядчиков" /></a>
+                    <a itemprop="url" href="<?= get_home_url(); ?>/o-nas/podryadchiki/">Рекомендуем подрядчиков</a></div>
+            </div>
             </div>
         </div>
     </div>
