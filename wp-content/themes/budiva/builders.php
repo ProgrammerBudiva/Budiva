@@ -132,7 +132,7 @@ get_template_part( 'parts/underhead' ); ?>
                                             <div class="h3">Примеры работ</div>
 
 <!--                                            <div class="builder-works clearfix">-->
-                                                <div class="category-slider clearfix" style=" height:250px;   width: 95%;">
+                                                <div class="category-slider clearfix" style=" height:250px;   width: 97%;">
                                                     <div class="builders-slider">
                                                 <?php foreach( $img_ids as $img_id ) : ?>
 
@@ -296,9 +296,10 @@ get_template_part( 'parts/underhead' ); ?>
 //    $(function () {
         $('.builders-slider').bxSlider({
             mode: 'horizontal',
-            captions: true,
+//            captions: true,
             minSlides: 1,
             maxSlides: 5,
+            shrinkItems: true,
             slideMargin: 15,
             slideWidth: 250,
             adaptiveHeight: true,
@@ -318,3 +319,8 @@ get_template_part( 'parts/underhead' ); ?>
     },3000);
     });
 </script>
+<style>
+    .bx-viewport {
+        padding-left: 11px;
+    }
+</style>

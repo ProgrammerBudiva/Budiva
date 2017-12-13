@@ -4498,8 +4498,8 @@ input[type='date']:focus::-webkit-clear-button {
 }
 
 .builder-works-types .work-item {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     margin-left: 10px;
 }
 
