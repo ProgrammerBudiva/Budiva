@@ -9,7 +9,7 @@ get_template_part( 'parts/underhead' ); ?>
 
     <div class="wrap vacancies-wrap">
         <div class="container">
-            <div class="vacancies-content">
+            <div class="    vacancies-content">
                 <?php while( have_posts() ) : the_post(); ?>
                     <?php the_content(); ?>
                 <?php endwhile; ?>
@@ -23,20 +23,67 @@ get_template_part( 'parts/underhead' ); ?>
                     <?php else : ?>
                         <?php foreach( $city['list'] as $item ) : ?>
                             <div itemscope itemtype="http://schema.org/Product" class="vacancy-item">
-                                <div class="vacancy-header">
-                                    <p itemprop="name">
-                                        <b data-toggle="collapse" data-target="#builder-<?= $city['a']->term_id; ?>-<?= $item->ID; ?>" class="toggle look-vacancy collapsed"><?= $item->post_title; ?></b>
+                                <div class="vacancy-header" data-toggle="collapse" data-target="#builder-<?= $city['a']->term_id; ?>-<?= $item->ID; ?>" style="background:#efefef;cursor:pointer;padding:5px;">
+                                    <p itemprop="name" style="margin:0;">
+                                        <b  class="toggle look-vacancy-builders collapsed"><?= $item->post_title; ?></b>
+                                        <script>
+                                            $(document).ready(function (){
+                                                $('#builder-<?= $city['a']->term_id; ?>-<?= $item->ID; ?>').on('hide.bs.collapse', function () {
+                                                    $('.vacancy-item').removeClass('vacancy-item-active');
+                                                    $('.vacancy-header').removeClass('vacancy-header-active');
+                                                });
+
+                                                $('#builder-<?= $city['a']->term_id; ?>-<?= $item->ID; ?>').on('show.bs.collapse', function () {
+                                                    $('.vacancy-item').addClass('vacancy-item-active');
+                                                    $('.vacancy-header').addClass('vacancy-header-active');
+                                                });
+                                            });
+                                        </script>
                                     </p>
                                 </div>
 
                                 <div class="vacancy-content collapse" id="builder-<?= $city['a']->term_id; ?>-<?= $item->ID; ?>">
                                     <div class="row">
-                                        <div class="col-md-3">
+                                        <div class="col-md-2">
                                             <?= get_the_post_thumbnail( $item->ID, 'full' ); ?>
                                         </div>
-                                        <div class="col-md-9" itemprop="description">
-                                            <?= wpautop( $item->post_content ); ?>
+                                        <div class="col-md-6" style="padding-top: 6px;">
+                                            <?php
+                                            $address = get_post_meta( $item->ID, 'address', true );
+                                            $phone = get_post_meta( $item->ID, 'phone', true );
+                                            $email = get_post_meta( $item->ID, 'email', true );
+                                            $work_time = get_post_meta( $item->ID, 'work_time', true );
+                                            ?>
+                                            <?php if( $address || $phone || $email || $work_time ) : ?>
+                                                <table>
+                                                    <?php if( $address ) : ?>
+                                                        <tr>
+                                                            <td>Адрес</td>
+                                                            <td><?= $address; ?></td>
+                                                        </tr>
+                                                    <?php endif; ?>
+                                                    <?php if( $phone ) : ?>
+                                                        <tr>
+                                                            <td>Телефон</td>
+                                                            <td><?= $phone; ?></td>
+                                                        </tr>
+                                                    <?php endif; ?>
+                                                    <?php if( $email ) : ?>
+                                                        <tr>
+                                                            <td>E-mail</td>
+                                                            <td><a href="mailto:<?= $email; ?>"><?= $email; ?></a></td>
+                                                        </tr>
+                                                    <?php endif; ?>
+                                                    <?php if( $work_time ) : ?>
+                                                        <tr>
+                                                            <td>График работы</td>
+                                                            <td><?= $work_time; ?></td>
+                                                        </tr>
+                                                    <?php endif; ?>
+                                                </table>
+                                            <?php endif; ?>
                                         </div>
+
                                     </div>
 
                                     <div class="works">
@@ -61,74 +108,46 @@ get_template_part( 'parts/underhead' ); ?>
                                         <?php endif; ?>
                                     </div>
 
-                                    <?php
-                                    $address = get_post_meta( $item->ID, 'address', true );
-                                    $phone = get_post_meta( $item->ID, 'phone', true );
-                                    $email = get_post_meta( $item->ID, 'email', true );
-                                    $work_time = get_post_meta( $item->ID, 'work_time', true );
-                                    ?>
 
-                                    <?php if( $address || $phone || $email || $work_time ) : ?>
-                                        <table>
-                                            <?php if( $address ) : ?>
-                                                <tr>
-                                                    <td>Адрес</td>
-                                                    <td><?= $address; ?></td>
-                                                </tr>
-                                            <?php endif; ?>
-                                            <?php if( $phone ) : ?>
-                                                <tr>
-                                                    <td>Телефон</td>
-                                                    <td><?= $phone; ?></td>
-                                                </tr>
-                                            <?php endif; ?>
-                                            <?php if( $email ) : ?>
-                                                <tr>
-                                                    <td>E-mail</td>
-                                                    <td><a href="mailto:<?= $email; ?>"><?= $email; ?></a></td>
-                                                </tr>
-                                            <?php endif; ?>
-                                            <?php if( $work_time ) : ?>
-                                                <tr>
-                                                    <td>График работы</td>
-                                                    <td><?= $work_time; ?></td>
-                                                </tr>
-                                            <?php endif; ?>
-                                        </table>
-                                    <?php endif; ?>
 
                                     <?php
                                     $img_ids = json_decode( get_post_meta( $item->ID, "gallery_images", true ) );
                                     if( !empty( $img_ids ) && is_array( $img_ids ) ) : ?>
 
-                                        <?php /* <div class="category-slider">
+                                       <!-- <div class="category-slider">
                                             <div class="builders-slider-start">
-                                                <?php foreach( $img_ids as $img_id ) : ?>
+                                                <?php /*foreach( $img_ids as $img_id ) : ?>
                                                     <div class="slide">
                                                         <a href="<?= wp_get_attachment_image_src( $img_id, 'full' )[0]; ?>" title="<?= get_post_meta( $img_id, 'media_popup_name', true ); ?>" class="zoom" data-rel="prettyPhoto[product-gallery]">
                                                             <?= wp_get_attachment_image( $img_id, 'size-270x270' ); ?>
                                                         </a>
                                                     </div>
-                                                <?php endforeach; ?>
+                                                <?php endforeach; */?>
                                             </div>
-                                        </div> */ ?>
-
-                                        <div class="works">
+                                        </div>-->
+                                    <div class="works" itemprop="description">
+                                            <?= wpautop( $item->post_content ); ?>
+                                    </div>
+                                    <div class="works">
                                             <div class="h3">Примеры работ</div>
 
-                                            <div class="builder-works clearfix">
-
+<!--                                            <div class="builder-works clearfix">-->
+                                                <div class="category-slider clearfix" style=" height:250px;   width: 95%;">
+                                                    <div class="builders-slider">
                                                 <?php foreach( $img_ids as $img_id ) : ?>
 
-                                                    <div class="work-item">
+<!--                                                    <div class="work-item">-->
+                                                        <div class="slide">
                                                         <a href="<?= wp_get_attachment_image_src( $img_id, 'full' )[0]; ?>" title="<?= get_post_meta( $img_id, 'media_popup_name', true ); ?>" class="zoom" data-rel="prettyPhoto[builder-<?= $city['a']->term_id; ?>-<?= $item->ID; ?>]">
-                                                            <?= wp_get_attachment_image( $img_id, 'size-200x200' ); ?>
+                                                            <?= wp_get_attachment_image( $img_id, 'size-270x270' ); ?>
                                                         </a>
-                                                    </div>
+                                                        </div>
+<!--                                                    </div>-->
 
                                                 <?php endforeach; ?>
-
-                                            </div>
+                                                    </div>
+                                                </div>
+<!--                                            </div>-->
                                         </div>
 
                                     <?php endif; ?>
@@ -269,3 +288,33 @@ get_template_part( 'parts/underhead' ); ?>
     </div>
 
 <?php get_footer(); ?>
+
+<script>
+
+    $(window).load(function () {
+    setTimeout(function(){
+//    $(function () {
+        $('.builders-slider').bxSlider({
+            mode: 'horizontal',
+            captions: true,
+            minSlides: 1,
+            maxSlides: 5,
+            slideMargin: 15,
+            slideWidth: 250,
+            adaptiveHeight: true,
+            auto: true,
+//            preloadImages: 'visible',
+            responsive: true,
+            onSliderLoad: function (currentIndex) {
+                var c = $(".category-slider"),
+                    next = c.find(".bx-next"),
+                    prev = c.find(".bx-prev"),
+                    all = c.find(".bx-viewport").height();
+                next.attr("style", "bottom: " + ( (all - next.height() ) / 2 ) + "px !important");
+                prev.attr("style", "bottom: " + ( (all - prev.height() ) / 2 ) + "px !important");
+            }
+        });
+//    });
+    },3000);
+    });
+</script>
