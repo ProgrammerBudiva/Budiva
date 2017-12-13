@@ -898,6 +898,7 @@ p.manafacture-info {
 }
 
 .manafacture .bx-viewport,
+.builders-slider .bx-viewport,
 .category-slider .bx-viewport {
     background: none !important
 }
@@ -906,6 +907,8 @@ p.manafacture-info {
 .manafacture a.bx-prev,
 .category-slider a.bx-next,
 .category-slider a.bx-prev,
+.builders-slider a.bx-next,
+.builders-slider a.bx-prev,
 .single-product a.bx-next,
 .single-product a.bx-prev {
     background: transparent url(../img/arrow.png) no-repeat center !important;
@@ -919,11 +922,13 @@ p.manafacture-info {
 }
 
 .manafacture a.bx-prev,
+.builders-slider a.bx-prev,
 .category-slider a.bx-prev {
     transform: rotate(270deg);
     left: -55px !important;
 }
 
+.builders-slider a.bx-next,
 .manafacture a.bx-next {
     transform: rotate(90deg);
     right: -55px !important;
@@ -941,6 +946,7 @@ p.manafacture-info {
 }
 
 .manafacture .bx-wrapper,
+.builders-slider .bx-wrapper,
 .category-slider .bx-wrapper {
     margin: 0 auto !important;
     padding: 10px 0;
@@ -1467,6 +1473,12 @@ p.news-txt {
 }
 
 .look-vacancy {
+    cursor: pointer;
+    color: #177ca3;
+    margin-left: 10px;
+}
+
+.look-vacancy-builders {
     cursor: pointer;
     color: #177ca3;
     margin-left: 10px;
@@ -2461,11 +2473,21 @@ ul.navbar-menu-list li a {
 }
 
 .vacancy-item {
+    background:#fff;
+    margin: 0 0 8px;
+    border:1px solid #efefef;
     margin-bottom: 0;
 }
 
+.vacancy-item-active{
+    border:1px solid #00b7f1!important;
+}
 .vacancy-header {
     font-size: 14px;
+}
+
+.vacancy-header-active {
+    background: #00b7f1!important;
 }
 
 .vacancy-content .btn-blue {
@@ -4645,21 +4667,21 @@ input[type='date']:focus::-webkit-clear-button {
     transition: all .3s linear;
 }
 
-.product-title .one-click:hover form {
-    margin-top: 10px;
-    height: 38px;
-    border: 1px solid #919090;
-}
+/*.product-title .one-click:hover form {*/
+    /*margin-top: 10px;*/
+    /*height: 38px;*/
+    /*border: 1px solid #919090;*/
+/*}*/
 
 .product-title .one-click form p {
     margin: 0;
 }
 
-.product-title .one-click form p:after {
-    content: '';
-    display: block;
-    clear: both;
-}
+/*.product-title .one-click form p:after {*/
+    /*content: '';*/
+    /*display: block;*/
+    /*clear: both;*/
+/*}*/
 
 .product-title .one-click form .ajax-loader {
     display: none;
@@ -4883,7 +4905,7 @@ input[type='date']:focus::-webkit-clear-button {
     margin-bottom: 30px;
 }
 
-.page-template-builders .vacancy-content > table td {
+.page-template-builders .vacancy-content  table td {
     padding: 3px 30px 3px 0;
 }
 
