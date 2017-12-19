@@ -127,7 +127,7 @@ if ($sm_modal === 'true') {
 	 
 		<input type="submit"  name="submit" value="<?php echo get_post_meta($post->ID,'sm_form_cta_text',true); ?>" class="sm_submit" id='sm_submit'  style="color: <?php echo get_post_meta($post->ID,'smf_form_bg',true); ?> !important; background-color: <?php echo get_post_meta($post->ID,'smf_cta_bg',true); ?> !important; background: <?php echo get_post_meta($post->ID,'smf_cta_bg',true); ?> !important; ">
 	</form>   
-	<div style="font-size: 16px; line-height: 1.8; background: #e3e3e3; padding: 9px 0 1px 15px; font-family: helvetica,sans-serif; ">
+	<div style="display:none;font-size: 16px; line-height: 1.8; background: #e3e3e3; padding: 9px 0 1px 15px; font-family: helvetica,sans-serif; ">
 		<span id="response" style="color: <?php echo get_post_meta($post->ID,'smf_content_c',true); ?> !important; ">
 		<?php
 
