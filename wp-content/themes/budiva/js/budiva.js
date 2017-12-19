@@ -272,3 +272,9 @@
         });
     };
 })(jQuery);
+
+$('#1click').click(function(){
+    console.log('123');
+     $('.product-title form ').toggle();
+    $("input[name='tel-167']").focus();
+});
