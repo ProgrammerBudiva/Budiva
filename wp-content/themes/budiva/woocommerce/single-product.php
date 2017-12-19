@@ -100,8 +100,11 @@ while( have_posts() ) : the_post();
                             Заказать для моего объекта
                         </a>
 
-                        <div class="one-click">
+                        <div id="1click" class="one-click">
                             Купить в 1 клик
+
+                        </div>
+                        <div class="one-click" id="1click-content">
                             <div class="inner">
                                 <?= do_shortcode( '[contact-form-7 id="2200"]' ); ?>
                             </div>

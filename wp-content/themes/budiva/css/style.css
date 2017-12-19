@@ -4659,6 +4659,9 @@ input[type='date']:focus::-webkit-clear-button {
     height: 0;
     border: none;
     position: absolute;
+    border: 1px solid #919090;
+    height: 38px;
+    display: none;
 
     -webkit-transition: all .3s linear;
     -moz-transition: all .3s linear;
@@ -4667,21 +4670,21 @@ input[type='date']:focus::-webkit-clear-button {
     transition: all .3s linear 0.5s;
 }
 
-.product-title .one-click:hover form {
-    /*margin-top: 10px;*/
-    height: 38px;
-    border: 1px solid #919090;
-}
+/*.product-title .one-click:hover form {*/
+    /*!*margin-top: 10px;*!*/
+    /*height: 38px;*/
+    /*border: 1px solid #919090;*/
+/*}*/
 
 .product-title .one-click form p {
     margin: 0;
 }
 
-.product-title .one-click form p:after {
-    content: '';
-    display: block;
-    clear: both;
-}
+/*.product-title .one-click form p:after {*/
+    /*content: '';*/
+    /*display: block;*/
+    /*clear: both;*/
+/*}*/
 
 .product-title .one-click form .ajax-loader {
     display: none;
