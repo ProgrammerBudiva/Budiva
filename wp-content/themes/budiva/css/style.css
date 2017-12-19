@@ -4667,21 +4667,21 @@ input[type='date']:focus::-webkit-clear-button {
     transition: all .3s linear;
 }
 
-/*.product-title .one-click:hover form {*/
-    /*margin-top: 10px;*/
-    /*height: 38px;*/
-    /*border: 1px solid #919090;*/
-/*}*/
+.product-title .one-click:hover form {
+    margin-top: 10px;
+    height: 38px;
+    border: 1px solid #919090;
+}
 
 .product-title .one-click form p {
     margin: 0;
 }
 
-/*.product-title .one-click form p:after {*/
-    /*content: '';*/
-    /*display: block;*/
-    /*clear: both;*/
-/*}*/
+.product-title .one-click form p:after {
+    content: '';
+    display: block;
+    clear: both;
+}
 
 .product-title .one-click form .ajax-loader {
     display: none;
