@@ -4664,11 +4664,11 @@ input[type='date']:focus::-webkit-clear-button {
     -moz-transition: all .3s linear;
     -ms-transition: all .3s linear;
     -o-transition: all .3s linear;
-    transition: all .3s linear;
+    transition: all .3s linear 0.5s;
 }
 
 .product-title .one-click:hover form {
-    margin-top: 10px;
+    /*margin-top: 10px;*/
     height: 38px;
     border: 1px solid #919090;
 }
@@ -4894,7 +4894,7 @@ input[type='date']:focus::-webkit-clear-button {
     border: none !important;
     color: #fff !important;
     font-size: 18px !important;
-    margin-left: 1% !important;
+    /*margin-left: 1% !important;*/
     font-family: helvetica, sans-serif;
     padding: 1.2% 4% 1.5% 4% !important;
     border-radius: 10px/15px;
