@@ -429,8 +429,11 @@
             $.ajax({
                 type: "POST",
                 url: ajaxurl,
-                data: data
-//                success: success,
+                data: data,
+                success: function(){
+                        $('#tab_price .file_data').hide();
+                        $('#tab_price .file_data [name="tabs[price][download]"]').val(0);
+                }
 //                dataType: dataType
             });
         });
