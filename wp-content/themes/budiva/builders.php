@@ -26,7 +26,7 @@ get_template_part( 'parts/underhead' ); ?>
                                 <div class="vacancy-header" data-toggle="collapse" data-target="#builder-<?= $city['a']->term_id; ?>-<?= $item->ID; ?>" style="background:#efefef;cursor:pointer;padding:5px;">
                                     <p itemprop="name" style="margin:0;">
                                         <b  class="toggle look-vacancy-builders collapsed"><?= $item->post_title; ?></b>
-                                        <script>
+<!--                                        <script>
                                             $(document).ready(function (){
                                                 $('#builder-<?= $city['a']->term_id; ?>-<?= $item->ID; ?>').on('hide.bs.collapse', function () {
                                                     $('.vacancy-item').removeClass('vacancy-item-active');
@@ -38,7 +38,7 @@ get_template_part( 'parts/underhead' ); ?>
                                                     $('.vacancy-header').addClass('vacancy-header-active');
                                                 });
                                             });
-                                        </script>
+                                        </script>-->
                                     </p>
                                 </div>
 
