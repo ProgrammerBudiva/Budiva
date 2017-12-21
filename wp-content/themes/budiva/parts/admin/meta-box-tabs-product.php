@@ -24,7 +24,7 @@
                 <div class="col50">
                     <h4>Выберите файл с прайсом</h4>
 
-                    <div class="file_data" <?php if( !empty( $download_title ) )
+                    <div class="file_data" <?php if(  $prices['download_id'] != 0  )
                         echo " style='display:block;'"; ?>>
                         <input type="hidden" name="tabs[price][download]" value="<?= $prices['download_id']; ?>"/>
                         <img src="<?= $download_icon; ?>"/>
@@ -32,6 +32,9 @@
                         <p><?= $download_title; ?></p>
                     </div>
                     <button class="button upload_file_btn">Загрузить</button>
+                    <?php if( $prices['download_id'] != 0  ){?>
+                    <button class="button delete_file_btn">Удалить</button>
+                    <?php }?>
                 </div>
                 <?php /* <div class="col50">
                     <h4>Файл для просмотра</h4>
@@ -379,11 +382,11 @@
          return false;
          });*/
 
-        $('#tab_price .sortable').on('click', '.delete_file_btn', function(event) {
-            event.preventDefault();
-            $(this).parent().parent().remove();
-            return false;
-        });
+//        $('#tab_price .sortable').on('click', '.delete_file_btn', function(event) {
+//            event.preventDefault();
+//            $(this).parent().parent().remove();
+//            return false;
+//        });
 
         $('#tab_price .sortable').on('click', '.upload_file_btn', function(event) {
             event.preventDefault();
@@ -413,6 +416,23 @@
             custom_frame.open();
 
             return false;
+        });
+
+        $('#tab_price .sortable').on('click', '.delete_file_btn', function(event) {
+            event.preventDefault();
+
+            var file_data = $(this).parent().find('.file_data');
+            var data = {
+                action: 'delete_product_price',
+                post_id: $('#post_ID').val()
+            };
+            $.ajax({
+                type: "POST",
+                url: ajaxurl,
+                data: data
+//                success: success,
+//                dataType: dataType
+            });
         });
     });
 </script>

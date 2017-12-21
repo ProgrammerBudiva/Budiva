@@ -814,3 +814,22 @@ function active( &$active, $class = true ) {
 if (!current_user_can('administrator')):
     show_admin_bar(false);
 endif;
+
+
+add_action("wp_ajax_delete_product_price", "budiva_delete_price");
+
+function budiva_delete_price(){
+
+    $prices = MetaBoxes\Tabs::get_post_prices( $_POST['post_id'], 'post', true );
+
+    global $wpdb;
+    $wpdb->update( 'wp_tabs_price',
+        array('download_id' => 0),
+        array('post_id' => $_POST['post_id'])
+    );
+
+    $wpdb->update( 'wp_tabs_price',
+        array('download_id' => 0),
+        array('id' => $prices['id'])
+    );
+}
