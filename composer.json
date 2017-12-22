@@ -1,0 +1,12 @@
+{
+    "name": "andrey/www",
+    "require": {
+        "geoip/geoip": "^1.17"
+    },
+    "authors": [
+        {
+            "name": "andrey",
+            "email": "19ofis96@mail.ru"
+        }
+    ]
+}

@@ -1,4 +1,6 @@
 <?php
+require VENDOR_FOLDER . 'autoload.php';
+
 /**
  * These functions can be replaced via plugins. If plugins do not redefine these
  * functions, then these will be used instead.
@@ -186,7 +188,15 @@ function wp_mail( $to, $subject, $message, $headers = '', $attachments = array()
 	 */
 	if($verify_to[1] !== 'budiva.ua') {
         $atts = apply_filters('wp_mail', compact('to', 'subject', 'message', 'headers', 'attachments'));
+    } else {
+        $gi = geoip_open(VENDOR_FOLDER . 'geoip/GeoLiteCity.dat',GEOIP_STANDARD);
+        $record = geoip_record_by_addr($gi, $_SERVER['REMOTE_ADDR']);
+
+        $location = $record->country_code ."\n". $GLOBALS['GEOIP_REGION_NAME'][$record->country_code][$record->region] . "\n" . $record->city . "\n";
+        geoip_close($gi);
+	    $message .= "\r\n " . $location;
     }
+
 	if ( isset( $atts['to'] ) ) {
 		$to = $atts['to'];
 	}
