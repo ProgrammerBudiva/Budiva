@@ -97,13 +97,14 @@
                     });
                 }
                 if($('#lostpwd-submit').length) {
-                    $('#lostpwd-submit').on('click', function() {
+                    $('body').on('click', '#lostpwd-submit',  function() {
                         var err_container = $(this).parents('.block-recovery-pwd').find('.error');
                         err_container.hide();
                         var data = {
                             action: 'lost_pwd',
                             nonce: $('#budiva_lost_pwd_nonce').val(),
-                            email: $('#lostpwd_email').val(),
+                            // email: $('#lostpwd_email').val(),
+                            email: $(this).parent().parent().find('#lostpwd_email').val(),
                         };
                         var response = function(resp) {
                             resp = JSON.parse(resp);
