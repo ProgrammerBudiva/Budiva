@@ -303,33 +303,42 @@
 <?php wp_footer(); ?>
 
 <!-- BEGIN JIVOSITE CODE {literal} -->
-<script type='text/javascript'>
-    (function() {
-        var widget_id = '7a7v75xS6m';
-        var d = document;
-        var w = window;
-
-        function l() {
-            var s = document.createElement('script');
-            s.type = 'text/javascript';
-            s.async = true;
-            s.src = '//code.jivosite.com/script/widget/' + widget_id;
-            var ss = document.getElementsByTagName('script')[0];
-            ss.parentNode.insertBefore(s, ss);
-        }
-
-        if(d.readyState == 'complete') {
-            l();
-        } else {
-            if(w.attachEvent) {
-                w.attachEvent('onload', l);
-            } else {
-                w.addEventListener('load', l, false);
-            }
-        }
-    })();</script>
+<!--<script type='text/javascript'>-->
+<!--    (function() {-->
+<!--        var widget_id = '7a7v75xS6m';-->
+<!--        var d = document;-->
+<!--        var w = window;-->
+<!---->
+<!--        function l() {-->
+<!--            var s = document.createElement('script');-->
+<!--            s.type = 'text/javascript';-->
+<!--            s.async = true;-->
+<!--            s.src = '//code.jivosite.com/script/widget/' + widget_id;-->
+<!--            var ss = document.getElementsByTagName('script')[0];-->
+<!--            ss.parentNode.insertBefore(s, ss);-->
+<!--        }-->
+<!---->
+<!--        if(d.readyState == 'complete') {-->
+<!--            l();-->
+<!--        } else {-->
+<!--            if(w.attachEvent) {-->
+<!--                w.attachEvent('onload', l);-->
+<!--            } else {-->
+<!--                w.addEventListener('load', l, false);-->
+<!--            }-->
+<!--        }-->
+<!--    })();</script>-->
 <!-- {/literal} END JIVOSITE CODE -->
-</body>
+
+    <script type="text/javascript">
+        (function(d, w, s) {
+            var widgetHash = 'n1kk2paqv5ff7h04nkjb', gcw = d.createElement(s); gcw.type = 'text/javascript'; gcw.async = true;
+            gcw.src = '//widgets.binotel.com/getcall/widgets/'+ widgetHash +'.js';
+            var sn = d.getElementsByTagName(s)[0]; sn.parentNode.insertBefore(gcw, sn);
+        })(document, window, 'script');
+    </script>
+
+    </body>
 </html>
 
 <?php
