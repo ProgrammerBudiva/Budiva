@@ -279,3 +279,14 @@ $('#1click').click(function(){
      $('.product-title form ').toggle();
     $("input[name='tel-167']").focus();
 });
+
+//Contact form 7 DOM events
+document.addEventListener( 'wpcf7mailsent', function( event ) {
+    if ( '2200' == event.detail.contactFormId ) {
+        // alert( "The contact form ID is 123." );
+        $('.product-title form ').hide();
+
+        $('#1click').append('<div class="mini-popup-1click"><p>Ваша заявка отправлена!</p></div>')
+        setTimeout(function(){$('.mini-popup-1click').fadeOut('fast')},5000);
+    }
+}, false );
