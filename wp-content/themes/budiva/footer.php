@@ -182,6 +182,7 @@
                     if($('.sub-menu').filter(function(){ return $(this).css('display') == 'block'; })){
                         $(this).css('display', 'none');
                         console.log('123');
+                        alert('boolshit');
 //                        $('.wrapper-menu-mobile').hide();
 //                        $('.wrapper-menu-mobile').slideToggle();
                         $(this).hide();
