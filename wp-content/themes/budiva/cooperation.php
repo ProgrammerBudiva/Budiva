@@ -87,7 +87,11 @@ get_template_part( 'parts/underhead' ); ?>
 <?php if( have_posts() ) : ?>
     <?php while( have_posts() ) : the_post(); ?>
         <div class="container content-container">
-            <?php the_content(); ?>
+            <div class="col-md-7 coop-desc">
+                <div itemprop="description" class="coop-item">
+                    <?php the_content(); ?>
+                </div>
+            </div>
         </div>
     <?php endwhile; ?>
 <?php endif; ?>
