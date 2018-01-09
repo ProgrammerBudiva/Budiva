@@ -4967,3 +4967,21 @@ input[type='date']:focus::-webkit-clear-button {
 .pp_pic_holder {
     z-index: 99999!important;
 }
+
+.mini-popup-1click {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: max-content;
+    height: 30px;
+    background: #2e9adb;
+    opacity: 0.8;
+    border-radius: 9px;
+}
+
+.mini-popup-1click p {
+    padding: 7px;
+    margin: 0;
+    color: white;
+
+}
