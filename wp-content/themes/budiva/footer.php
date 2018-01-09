@@ -173,6 +173,19 @@
             $('.additional-menu #menu-additional-menu > li > a').click(function(event) {
                 event.preventDefault();
             });
+
+            $(document).mouseup(function (e){ // событие клика по веб-документу
+                var div = $(".additional-menu"); // тут указываем ID элемента
+                if (!div.is(e.target) // если клик был не по нашему блоку
+                    && div.has(e.target).length === 0) { // и не по его дочерним элементам
+//                    div.hide(); // скрываем его
+                    if($('.sub-menu').filter(function(){ return $(this).css('display') == 'block'; })){
+                        $(this).css('display', 'none');
+                        console.log('123');
+                    }
+                }
+            });
+
         }
 
         $("input.phone, input#account_telephone, input#user_telephone").mask("+38(099)999-99-99");
