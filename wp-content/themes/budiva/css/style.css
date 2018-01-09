@@ -4972,16 +4972,19 @@ input[type='date']:focus::-webkit-clear-button {
     display: flex;
     align-items: center;
     position: absolute;
-    width: max-content;
+    width: 250px;
     height: 30px;
-    background: #2e9adb;
-    opacity: 0.8;
-    border-radius: 9px;
+    background: #f7f7f7;
+    border-radius: 20px;
+    border: 1px solid #b6b6b6;
+    padding: 18px 25px;
 }
 
 .mini-popup-1click p {
-    padding: 7px;
-    margin: 0;
-    color: white;
 
+    margin: 0 auto;
+    color: #005f8a;
+    font-size: 14px;
+    font-weight: lighter;
+    text-transform: none;
 }
