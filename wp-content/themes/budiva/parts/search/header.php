@@ -3,7 +3,7 @@
         <div class="h2 primary-header">
             <?= $name; ?> (всего найдено - <?= $this->count[$type]; ?>)
             <?php if( $this->count[$type] > $this::$per_page && !$this->is_type ) : ?>
-                <a class="btn-blue" href="<?php $this->full_link( $type ); ?>">Посмотреть все</a>
+                <a class="btn-blue btn-search-show-all" href="<?php $this->full_link( $type ); ?>">Посмотреть все</a>
             <?php endif; ?>
             <?php if( $this->is_type ) : ?>
                 <a class="btn-blue" href="<?php $this->partial_link( $type ); ?>">Назад</a>
