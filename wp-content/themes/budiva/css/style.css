@@ -2498,6 +2498,11 @@ ul.navbar-menu-list li a {
 .vacancy-content {
     margin: 20px 0 10px 35px;
     display: none;
+    padding-left: 20px;
+}
+
+.vacancy-content h3 {
+    margin: 20px 0 10px;
 }
 
 .vacancy-content.show {

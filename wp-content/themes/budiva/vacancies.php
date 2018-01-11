@@ -23,8 +23,8 @@ get_template_part( 'parts/underhead' ); ?>
                     <?php else : ?>
                         <?php foreach( $vacancy['list'] as $item ) : ?>
                             <div itemscope itemtype="http://schema.org/Product" class="vacancy-item">
-                                <div class="vacancy-header">
-                                    <p itemprop="name">
+                                <div class="vacancy-header" style="padding: 5px;">
+                                    <p itemprop="name" style="margin: 0;">
                                         <b data-toggle="collapse" data-target="#vacancy-<?= $vacancy['a']->term_id; ?>-<?= $item->ID; ?>" class="toggle look-vacancy collapsed"><?= $item->post_title; ?></b>
                                     </p>
                                 </div>
