@@ -288,5 +288,6 @@ document.addEventListener( 'wpcf7mailsent', function( event ) {
 
         $('#1click').append('<div class="mini-popup-1click"><p>Ваша заявка отправлена!</p></div>')
         setTimeout(function(){$('.mini-popup-1click').fadeOut('fast')},5000);
+        _gaq.push(['_trackEvent', 'Buy', '1click']);
     }
 }, false );
