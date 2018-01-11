@@ -655,6 +655,9 @@ Shop additional menu
     .page-shop {
         padding-top: 85px;
     }
+    div.login-register-form {
+        margin: auto;
+    }
 }
 
 /*
@@ -791,6 +794,15 @@ Tiles
     .content-wrap .news-content .date {
         display: inline-block;
     }
+    .login-register-form{
+        width: inherit;
+    }
+    .login-register-form a.tab {
+        font-size: 18px;
+    }
+    .login-register-form a.tab-active{
+        font-size: 18px;
+    }
 }
 
 @media screen and (max-width: 425px) {
@@ -825,6 +837,10 @@ Subscribe box in footer
 @media screen and (max-width: 360px) {
     .similar-products .tile .tile-wrapper.first-type a p {
         display: none;
+    }
+    #recover-link.std-link {
+        left: 28px;
+        position: relative;
     }
 }
 
