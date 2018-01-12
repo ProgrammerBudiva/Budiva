@@ -283,11 +283,27 @@ $('#1click').click(function(){
 //Contact form 7 DOM events
 document.addEventListener( 'wpcf7mailsent', function( event ) {
     if ( '2200' == event.detail.contactFormId ) {
-        // alert( "The contact form ID is 123." );
         $('.product-title form ').hide();
-
         $('#1click').append('<div class="mini-popup-1click"><p>Ваша заявка отправлена!</p></div>')
         setTimeout(function(){$('.mini-popup-1click').fadeOut('fast')},5000);
-        ga('send', 'event', 'Buy', '1click')
+
+        ga('send', 'event', 'Buy', '1click');
+
+    }else if ('343' == event.detail.contactFormId){
+        ga('send', 'event', 'Subscribe', 'footer');
+    }else if ('124' == event.detail.contactFormId){
+        ga('send', 'event', 'CallMe', 'header');
+    }else if ('125' == event.detail.contactFormId){
+        ga('send', 'event', 'CallMe', '404');
+    }else if ('1086' == event.detail.contactFormId){
+        ga('send', 'event', 'GetAnswer', 'click');
+    }else if ('197' == event.detail.contactFormId){
+        ga('send', 'event', 'BecomeProvider', 'click');
+    }else if ('198' == event.detail.contactFormId){
+        ga('send', 'event', 'GetPrice', 'click');
+    }else if ('196' == event.detail.contactFormId){
+        ga('send', 'event', 'GetJob', 'click');
     }
+
+
 }, false );
