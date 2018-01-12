@@ -303,6 +303,8 @@ document.addEventListener( 'wpcf7mailsent', function( event ) {
         ga('send', 'event', 'GetPrice', 'click');
     }else if ('196' == event.detail.contactFormId){
         ga('send', 'event', 'GetJob', 'click');
+    }else if ('228' == event.detail.contactFormId){
+        ga('send', 'event', 'Buy', 'order');
     }
 
 
