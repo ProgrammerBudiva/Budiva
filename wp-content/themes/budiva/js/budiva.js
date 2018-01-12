@@ -309,3 +309,13 @@ document.addEventListener( 'wpcf7mailsent', function( event ) {
 
 
 }, false );
+
+$('#tab_price .view').click(function(){
+    ga('send', 'event', 'Price', 'view');
+});
+$('#tab_price .download').click(function(){
+    ga('send', 'event', 'Price', 'download');
+});
+$('#tab_price .print').click(function(){
+    ga('send', 'event', 'Price', 'print');
+});
