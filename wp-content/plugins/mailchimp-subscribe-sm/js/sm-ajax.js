@@ -59,6 +59,7 @@
                     //$('#response').show('slow');  
                     $('.sm_modal').slideUp();
                     ga('send', 'event', 'Subscribe', 'SmForm');
+                    yaCounter47259651.reachGoal('SmForm'); return true;
                     $.cookie('ssm_subscribed', 'true', { expires: 30, path: '/' });
                 } else if(result == 'run_url'){
                     window.location.assign(sub_url);

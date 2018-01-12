@@ -288,23 +288,31 @@ document.addEventListener( 'wpcf7mailsent', function( event ) {
         setTimeout(function(){$('.mini-popup-1click').fadeOut('fast')},5000);
 
         ga('send', 'event', 'Buy', '1click');
-
+        yaCounter47259651.reachGoal('1click'); return true;
     }else if ('343' == event.detail.contactFormId){
         ga('send', 'event', 'Subscribe', 'footer');
+        yaCounter47259651.reachGoal('Subscribe'); return true;
     }else if ('124' == event.detail.contactFormId){
         ga('send', 'event', 'CallMe', 'header');
+        yaCounter47259651.reachGoal('CallMeHeader'); return true;
     }else if ('125' == event.detail.contactFormId){
         ga('send', 'event', 'CallMe', '404');
+        yaCounter47259651.reachGoal('CallMe404'); return true;
     }else if ('1086' == event.detail.contactFormId){
         ga('send', 'event', 'GetAnswer', 'click');
+        yaCounter47259651.reachGoal('GetAnswer'); return true;
     }else if ('197' == event.detail.contactFormId){
         ga('send', 'event', 'BecomeProvider', 'click');
+        yaCounter47259651.reachGoal('BecomeProvider'); return true;
     }else if ('198' == event.detail.contactFormId){
         ga('send', 'event', 'GetPrice', 'click');
+        yaCounter47259651.reachGoal('GetPrice'); return true;
     }else if ('196' == event.detail.contactFormId){
         ga('send', 'event', 'GetJob', 'click');
+        yaCounter47259651.reachGoal('GetJob'); return true;
     }else if ('228' == event.detail.contactFormId){
         ga('send', 'event', 'Buy', 'order');
+        yaCounter47259651.reachGoal('ORDER'); return true;
     }
 
 
@@ -312,10 +320,13 @@ document.addEventListener( 'wpcf7mailsent', function( event ) {
 
 $('#tab_price .view').click(function(){
     ga('send', 'event', 'Price', 'view');
+    yaCounter47259651.reachGoal('PriceView'); return true;
 });
 $('#tab_price .download').click(function(){
     ga('send', 'event', 'Price', 'download');
+    yaCounter47259651.reachGoal('PriceDownload'); return true;
 });
 $('#tab_price .print').click(function(){
     ga('send', 'event', 'Price', 'print');
+    yaCounter47259651.reachGoal('PricePrint'); return true;
 });
