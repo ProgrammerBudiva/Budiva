@@ -289,48 +289,4 @@ get_template_part( 'parts/underhead' ); ?>
 
 <?php get_footer(); ?>
 
-<script>
 
-    $(window).load(function () {
-    setTimeout(function(){
-
-        window.slider = $('.builders-slider').bxSlider({
-            mode: 'horizontal',
-//            captions: true,
-            minSlides: 1,
-            maxSlides: 5,
-            shrinkItems: true,
-            slideMargin: 15,
-            slideWidth: 250,
-            adaptiveHeight: true,
-            auto: true,
-//            preloadImages: 'visible',
-            responsive: true,
-            onSliderLoad: function (currentIndex) {
-                var c = $(".category-slider"),
-                    next = c.find(".bx-next"),
-                    prev = c.find(".bx-prev"),
-                    all = c.find(".bx-viewport").height();
-                next.attr("style", "bottom: 120px !important");
-                prev.attr("style", "bottom: 120px !important");
-                $('bx-viewport').css('height', '100%');
-            }
-        });
-
-        $('.vacancy-header').click(function (){
-//            slider.redrawSlider();
-            window.slider.reloadSlider();
-        })
-    },3000);
-
-    });
-</script>
-<style>
-    .bx-viewport {
-        padding-left: 11px;
-        height:100%!important;
-    }
-    .slide {
-        width: 250px!important;
-    }
-</style>
