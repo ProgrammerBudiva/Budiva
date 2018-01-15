@@ -715,6 +715,9 @@ Tiles
         margin: 0 auto 15px;
         display: block;
     }
+    .vacancy-content{
+        margin: 0 !important;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -756,6 +759,15 @@ Tiles
         margin-top: 110px !important;
     }
 
+    .custom-prev{
+        left: -4%!important;
+    }
+    .custom-next{
+        right: -4%!important;
+    }
+    .slick-slide .slide img {
+        margin: auto;
+    }
 }
 
 @media screen and (max-width: 430px) {
@@ -813,6 +825,12 @@ Tiles
         width: auto !important;
         padding: 10px 10px;
     }
+    .custom-prev{
+        left: -7%!important;
+    }
+    .custom-next{
+        right: -7%!important;
+    }
 }
 
 
@@ -832,6 +850,7 @@ Subscribe box in footer
         padding: 5px 10px;
         font-size: 16px;
     }
+
 }
 
 @media screen and (max-width: 360px) {
@@ -842,10 +861,25 @@ Subscribe box in footer
         left: 28px;
         position: relative;
     }
+    .custom-prev{
+        left: -9%!important;
+    }
+    .custom-next{
+        right: -9%!important;
+    }
 }
 
 @media screen and (max-width: 320px) {
     .news-table-extra td {
         padding: 10px 2px;
     }
+    .custom-prev{
+        left: -30px!important;
+    }
+    .custom-next{
+        right: -30px!important;
+    }
+}
+.slick-slide .slide img {
+    margin: auto;
 }

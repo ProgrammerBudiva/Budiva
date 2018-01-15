@@ -7,6 +7,8 @@ get_header();
 
 get_template_part( 'parts/underhead' ); ?>
 
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
     <div class="wrap vacancies-wrap">
         <div class="container">
             <div class="    vacancies-content">
@@ -132,8 +134,8 @@ get_template_part( 'parts/underhead' ); ?>
                                             <div class="h3">Примеры работ</div>
 
 <!--                                            <div class="builder-works clearfix">-->
-                                                <div class="category-slider clearfix" style=" height:250px;   width: 97%;">
-                                                    <div class="builders-slider">
+                                                <div class="category1-slider clearfix" style="   width: 97%;">
+<!--                                                    <div class="builders-slider">-->
                                                 <?php foreach( $img_ids as $img_id ) : ?>
 
 <!--                                                    <div class="work-item">-->
@@ -145,7 +147,7 @@ get_template_part( 'parts/underhead' ); ?>
 <!--                                                    </div>-->
 
                                                 <?php endforeach; ?>
-                                                    </div>
+<!--                                                    </div>-->
                                                 </div>
 <!--                                            </div>-->
                                         </div>
@@ -278,6 +280,96 @@ get_template_part( 'parts/underhead' ); ?>
         </div>
     </div>
 
+<script>
+    $(document).ready(function(){
+//setTimeout(function(){
+
+    $('.category1-slider').slick({
+        infinite: false,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+//        arrows: true,
+//        centerMode: true,
+//        centerPadding: '60px',
+//        adaptiveHeight: true,
+        nextArrow: '<a class="custom-next"></a>',
+        prevArrow: '<a class="custom-prev"></a>',
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    infinite: true
+//                    dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 320,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }
+            }
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+        ]
+    });
+    });
+
+
+    $('.vacancy-content').on('shown.bs.collapse', function () {
+        $('.category1-slider').slick('setPosition');
+    })
+
+</script>
+<style>
+    .custom-prev:before,
+    .slick-next:before {
+        color: black;
+    }
+    .slick-list {
+        /*display: flex !important;*/
+
+        width: 80%;
+        margin: auto;
+    }
+    .custom-prev { padding: 0;
+        background: transparent url(https://budiva.ua/wp-content/themes/budiva/img/arrow.png) no-repeat center !important;
+        transform: rotate(270deg);
+        height:20px;
+        display: block!important;
+        width: 75px;
+        position: absolute;
+        top: 50%;
+        left: 0;
+    }
+    .custom-next { padding: 0;
+        background: transparent url(https://budiva.ua/wp-content/themes/budiva/img/arrow.png) no-repeat center !important;
+        transform: rotate(90deg);
+        height:20px;
+        position: absolute;
+        width: 75px;
+        display: block!important;
+        top: 50%;
+        right: 0;
+    }
+</style>
     <div class="modal fade" role="dialog" id="resumeForm">
         <div class="modal-dialog modal-form-bid">
             <div class="modal-container type-form ">
@@ -289,48 +381,3 @@ get_template_part( 'parts/underhead' ); ?>
 
 <?php get_footer(); ?>
 
-<script>
-
-    $(window).load(function () {
-    setTimeout(function(){
-
-        window.slider = $('.builders-slider').bxSlider({
-            mode: 'horizontal',
-//            captions: true,
-            minSlides: 1,
-            maxSlides: 5,
-            shrinkItems: true,
-            slideMargin: 15,
-            slideWidth: 250,
-            adaptiveHeight: true,
-            auto: true,
-//            preloadImages: 'visible',
-            responsive: true,
-            onSliderLoad: function (currentIndex) {
-                var c = $(".category-slider"),
-                    next = c.find(".bx-next"),
-                    prev = c.find(".bx-prev"),
-                    all = c.find(".bx-viewport").height();
-                next.attr("style", "bottom: 120px !important");
-                prev.attr("style", "bottom: 120px !important");
-                $('bx-viewport').css('height', '100%');
-            }
-        });
-
-        $('.vacancy-header').click(function (){
-//            slider.redrawSlider();
-            window.slider.reloadSlider();
-        })
-    },3000);
-
-    });
-</script>
-<style>
-    .bx-viewport {
-        padding-left: 11px;
-        height:100%!important;
-    }
-    .slide {
-        width: 250px!important;
-    }
-</style>
