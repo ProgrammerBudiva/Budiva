@@ -86,48 +86,4 @@ $(document).ready(function() {
             }
         });
     }
-
-    if($(document).width() < 767) {
-//        $('.news-image .thumbnails').append('<div class="slide"></div>');
-//        $('.news-image .thumbnails .slide:last-child').append($('.news-image .thumbnails + a').clone());
-//        $('.news-image .thumbnails + a').remove();
-        $(".builders-slider").bxSlider({
-            slideWidth: 230,
-            minSlides: 1,
-            maxSlides: 1,
-            slideMargin: 0,
-            moveSlides: 1,
-            infiniteLoop: false,
-            mode: 'horizontal',
-            onSliderLoad: function() {
-                $(".news-image .thumbnails").css("overflow", 'visible');
-            }
-        });
-    }
-    else {
-        window.slider = $('.builders-slider').bxSlider({
-            mode: 'horizontal',
-//            captions: true,
-            minSlides: 1,
-            maxSlides: 5,
-            shrinkItems: true,
-            slideMargin: 15,
-            slideWidth: 250,
-            infiniteLoop: false,
-            adaptiveHeight: true,
-            auto: true,
-//            preloadImages: 'visible',
-            responsive: true,
-            onSliderLoad: function (currentIndex) {
-                $('.builders-slider').css("overflow", 'visible');
-                var c = $(".category-slider"),
-                    next = c.find(".bx-next"),
-                    prev = c.find(".bx-prev"),
-                    all = c.find(".bx-viewport").height();
-                next.attr("style", "bottom: 120px !important");
-                prev.attr("style", "bottom: 120px !important");
-//                $('bx-viewport').css('height', '100%');
-            }
-        });
-    }
 });
