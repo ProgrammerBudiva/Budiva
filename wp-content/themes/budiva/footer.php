@@ -354,7 +354,34 @@
             var sn = d.getElementsByTagName(s)[0]; sn.parentNode.insertBefore(gcw, sn);
         })(document, window, 'script');
     </script>
-
+    <style>
+        #bingc-phone-button:hover svg.bingc-phone-button-circle circle.bingc-phone-button-circle-inside {
+            fill: #9fd3ee !important;
+        }
+        #bingc-phone-button svg.bingc-phone-button-circle
+        circle.bingc-phone-button-circle-inside {
+            fill: #9fd3ee !important;
+        }
+        #bingc-phone-button div.bingc-phone-button-tooltip {
+            background: #9fd3ee !important;
+        }
+        #bingc-phone-button div.bingc-phone-button-tooltip svg.bingc-phone-button-arrow
+        polyline {
+            fill: #9fd3ee !important;
+        }
+        #bingc-passive div.bingc-passive-overlay div.bingc-passive-content div.bingc-passive-get-phone-form form.bingc-passive-get-phone-form a.bingc-passive-phone-form-button{
+            background: #9fd3ee !important;
+        }
+        input[type=text]:focus, input[type=tel]:focus, input[type=email]:focus, textarea:focus{
+            border: 2px solid #9fd3ee !important;
+        }
+        #bingc-passive div.bingc-passive-overlay div.bingc-passive-content div.bingc-passive-get-phone-form form.bingc-passive-get-phone-form div.bingc-passive-get-phone-form-input-border:after{
+             background-color: rgba(0,0,0,0) !important;
+        }
+        #bingc-active div.bingc-active-overlay div.bingc-active-content div.bingc-active-get-phone-form form.bingc-active-get-phone-form a.bingc-active-phone-form-button{
+            background: #9fd3ee !important;
+        }
+    </style>
     <!— Yandex.Metrika counter —>
     <script type="text/javascript" >
         (function (d, w, c) {
