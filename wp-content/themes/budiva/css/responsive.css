@@ -884,6 +884,8 @@ Subscribe box in footer
     margin: auto;
 }
 
-/*@media screen and {*/
-
-/*}*/
+@media screen and (min-width: 580px) and (max-width: 1024px){
+    #content-block .container{
+        margin-bottom: 30px;
+    }
+}
