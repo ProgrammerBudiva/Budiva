@@ -346,7 +346,7 @@
 <!--        }-->
 <!--    })();</script>-->
 <!-- {/literal} END JIVOSITE CODE -->
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js"></script>
     <script type="text/javascript">
         (function(d, w, s) {
             var widgetHash = 'n1kk2paqv5ff7h04nkjb', gcw = d.createElement(s); gcw.type = 'text/javascript'; gcw.async = true;
