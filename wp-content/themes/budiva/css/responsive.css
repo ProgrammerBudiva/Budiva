@@ -756,7 +756,7 @@ Tiles
         display: flex;
     }
     .modal.in .modal-dialog {
-        margin-top: 110px !important;
+        margin-top: 100px !important;
     }
 
     .custom-prev{
@@ -883,3 +883,7 @@ Subscribe box in footer
 .slick-slide .slide img {
     margin: auto;
 }
+
+/*@media screen and {*/
+
+/*}*/

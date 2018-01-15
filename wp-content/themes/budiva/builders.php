@@ -286,7 +286,7 @@ get_template_part( 'parts/underhead' ); ?>
 
     $('.category1-slider').slick({
         infinite: false,
-        slidesToShow: 3,
+        slidesToShow: 4,
         slidesToScroll: 1,
 //        arrows: true,
 //        centerMode: true,
