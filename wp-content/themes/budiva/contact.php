@@ -142,7 +142,7 @@ get_header();
                                     <a href="#" class="print-map" data-target="map-<?= $maps; ?>">Версия для печати</a>
                                 </td>
                                 <td>
-                                    <img src="/wp-content/themes/budiva/qr/qr.php?id=1&y=<?= $meta['bgmp_latitude'][0]; ?>&x=<?= $meta['bgmp_longitude'][0]; ?>"/>
+                                    <img src="/wp-content/themes/budiva/qr/qr.php?id=1&y=<?= $maps; ?>"/>
                                 </td>
                             </tr>
                         </table>
