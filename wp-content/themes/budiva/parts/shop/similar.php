@@ -15,7 +15,7 @@
                             </div>
                         </div>
                         <a href="<?php the_permalink(); ?>">
-                            <div class="h3" itemprop="name"><?php the_title(); ?></div>
+                            <div class="h3""><?php the_title(); ?></div>
 
                             <p itemprop="description"><?= get_the_excerpt(); ?></p>
 
