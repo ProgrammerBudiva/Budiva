@@ -11,13 +11,13 @@ get_template_part( 'parts/underhead' ); ?>
         <div class="container">
             <div class="row">
                 <?php while( have_posts() ) : the_post(); ?>
-                    <div itemscope itemtype="http://schema.org/Product">
+                    <div>
                     <div class="about-thumb col-md-3 col-xs-3">
                         <a href="<?= wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) ); ?>" class="zoom" rel="prettyPhoto">
                             <?= wp_get_attachment_image( get_post_thumbnail_id( $post->ID ), 'full' ); ?>
                         </a>
                     </div>
-                    <div class="about-text col-md-9 col-xs-9" itemprop="description">
+                    <div class="about-text col-md-9 col-xs-9">
                       <?php the_content(); ?>
                     </div>
                     </div>
