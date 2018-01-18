@@ -19,7 +19,7 @@
                                 </div>
                             </div>
                             <a href="<?= get_permalink( $product->ID ); ?>">
-                                <div class="h3" itemprop="name"><?= $product->post_title; ?></div>
+                                <div class="h3"><?= $product->post_title; ?></div>
 
                                 <p itemprop="description"><?= $product->post_excerpt; ?></p>
 
