@@ -36,6 +36,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta name="yandex-verification" content="e4d3d93d575f7844" />
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name='wmail-verification' content='f30ae42a93d0b4ecc6c54e4e16de49d5' />
     <link href="<?= get_stylesheet_directory_uri(); ?>/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
     <?php wp_head(); ?>
     <script type="text/javascript">$ = jQuery</script>

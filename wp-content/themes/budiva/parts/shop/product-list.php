@@ -1,5 +1,5 @@
 <div class="content-wrap category-page">
-    <div itemscope itemtype="http://schema.org/Product" class="container container-small subcategory-container">
+    <div class="container container-small subcategory-container">
         <?php if( $products ) : ?>
             <div class="tiles">
                 <?php foreach( $products as $product ) : ?>
