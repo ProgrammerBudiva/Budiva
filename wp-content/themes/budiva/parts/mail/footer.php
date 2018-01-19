@@ -32,7 +32,9 @@
             ?>
 
             <tr>
-                <th style="padding-top:10px; padding-right:5px; text-align:left;"><?= $meta['bgmp_city'][0]; ?></th>
+                <th style="padding-top:10px; padding-right:5px; text-align:left;">
+                    <a href="https://www.google.com.ua/maps/place/<?= $meta['bgmp_city'][0]; ?>" ><?= $meta['bgmp_city'][0]; ?></a>
+                </th>
                 <td class="hide" style="padding-top:10px; "><?= $meta['bgmp_address'][0]; ?></td>
                 <td style="padding-top:10px;">
                     <a style="color:#000!important; text-decoration:none" href="tel:<?= $meta['bgmp_phone'][1]; ?>">
