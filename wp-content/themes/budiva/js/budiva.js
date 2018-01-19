@@ -291,7 +291,14 @@ document.addEventListener( 'wpcf7mailsent', function( event ) {
         yaCounter47259651.reachGoal('1click'); return true;
     }else if ('343' == event.detail.contactFormId){
         ga('send', 'event', 'Subscribe', 'footer');
-        yaCounter47259651.reachGoal('Subscribe'); return true;
+        yaCounter47259651.reachGoal('Subscribe');
+        var data = {
+            action: 'get_subscriber',
+            email: event.detail.inputs[0].value,
+            type: 'subscribe'
+        };
+        jQuery.post( '/wp-admin/admin-ajax.php', data);
+        return true;
     }else if ('124' == event.detail.contactFormId){
         ga('send', 'event', 'CallMe', 'header');
         yaCounter47259651.reachGoal('CallMeHeader'); return true;
@@ -300,7 +307,14 @@ document.addEventListener( 'wpcf7mailsent', function( event ) {
         yaCounter47259651.reachGoal('CallMe404'); return true;
     }else if ('1086' == event.detail.contactFormId){
         ga('send', 'event', 'GetAnswer', 'click');
-        yaCounter47259651.reachGoal('GetAnswer'); return true;
+        yaCounter47259651.reachGoal('GetAnswer');
+        var data = {
+            action: 'get_subscriber',
+            email: event.detail.inputs[2].value,
+            type: 'answer'
+        };
+        jQuery.post( '/wp-admin/admin-ajax.php', data);
+        return true;
     }else if ('197' == event.detail.contactFormId){
         ga('send', 'event', 'BecomeProvider', 'click');
         yaCounter47259651.reachGoal('BecomeProvider'); return true;
@@ -312,7 +326,14 @@ document.addEventListener( 'wpcf7mailsent', function( event ) {
         yaCounter47259651.reachGoal('GetJob'); return true;
     }else if ('228' == event.detail.contactFormId){
         ga('send', 'event', 'Buy', 'order');
-        yaCounter47259651.reachGoal('ORDER'); return true;
+        yaCounter47259651.reachGoal('ORDER');
+        var data = {
+            action: 'get_subscriber',
+            email: event.detail.inputs[3].value,
+            type: 'order'
+        };
+        jQuery.post( '/wp-admin/admin-ajax.php', data);
+        return true;
     }
 
 
