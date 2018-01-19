@@ -1329,6 +1329,11 @@ input#subscribesubmit:hover {
     font-size: 1.2em;
 }
 
+.subscribe-box #wpcf7-f343-o1 .wpcf7-response-output.wpcf7-mail-sent-ok {
+    text-align: center;
+    margin-bottom: 10px !important;
+}
+
 .shownews {
     width: 90%;
     height: 65px;
