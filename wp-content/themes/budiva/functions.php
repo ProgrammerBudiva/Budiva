@@ -853,6 +853,7 @@ function save_subscriber(){
 
         $contact = new stdClass();
         $contact->channels = array(array('type'=>'email', 'value' => $_POST["email"]));
+        $contact->groups = array(array('name' => $_POST['type']));
         send_request($create_contact_url, $contact, $user, $password);
     }
 }
