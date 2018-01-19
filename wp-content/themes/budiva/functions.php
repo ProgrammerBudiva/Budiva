@@ -833,3 +833,41 @@ function budiva_delete_price(){
 //        array('id' => $prices['id'])
 //    );
 }
+
+add_action('wp_ajax_get_subscriber', 'save_subscriber');
+function save_subscriber(){
+    //Запись подписчика в бд
+    global $wpdb;
+    $check_email = $wpdb->get_results('Select id FROM subscribers WHERE email="'.$_POST["email"].'"');
+    $subscriber_id = $check_email[0]->id;
+    //Проверка, есть ли такой email уже в базе
+    if(!isset($subscriber_id)) {
+        $wpdb->insert(
+            'subscribers',
+            array('email' => $_POST['email'], 'type' => $_POST['type'])
+        );
+
+        $user = 'marketing@budiva.ua';
+        $password = '546213';
+        $create_contact_url = 'https://esputnik.com/api/v1/contact';
+
+        $contact = new stdClass();
+        $contact->channels = array(array('type'=>'email', 'value' => $_POST["email"]));
+        $contact->groups = array(array('name' => $_POST['type']));
+        send_request($create_contact_url, $contact, $user, $password);
+    }
+}
+//Integration function with esputnik
+function send_request($url, $json_value, $user, $password) {
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($json_value));
+    curl_setopt($ch, CURLOPT_HEADER, 1);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Accept: application/json', 'Content-Type: application/json'));
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch,CURLOPT_USERPWD, $user.':'.$password);
+    curl_setopt($ch,CURLOPT_RETURNTRANSFER, 1);
+    $output = curl_exec($ch);
+    curl_close($ch);
+//    echo($output);
+}
