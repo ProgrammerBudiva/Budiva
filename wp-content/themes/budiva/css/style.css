@@ -3573,9 +3573,9 @@ body.tax-product_cat {
 #dwls_search_results {
     position: absolute;
     list-style-type: none;
-    z-index: 100;
+    z-index: 99999;
     background: #ffffff;
-    border: 1px solid rgba(196, 196, 196, 0.5);
+    border: 1px solid rgba(196, 196, 196, 0.9);
     margin-left: -1px;
 }
 
