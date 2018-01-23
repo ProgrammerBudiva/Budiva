@@ -676,4 +676,35 @@ class Tabs
             array( '%d' )
         );
     }
+
+    public static function get_articles($id){
+        global $wpdb;
+
+        //Check id is product or is catedory
+        $check = $wpdb->get_row("SELECT post_type FROM wp_posts WHERE ID='{$id}'");
+        if ($check->post_type === 'product'){
+            $product = $wpdb->get_row("SELECT meta_value FROM wp_postmeta WHERE post_id='{$id}' AND meta_key='_yoast_wpseo_primary_product_cat'");
+            //If id is product? then $id= product_category
+            if(!empty($product)){
+                $id = $product->meta_value;
+            }
+        }
+        //Search articles in db
+        $results = $wpdb->get_results('Select * FROM wp_articles_to_categories WHERE category_id="'.$id.'" ');
+
+        $articles = [];
+
+        foreach ($results as $result){
+            $link_query = $wpdb->get_results("SELECT p.post_type, p.post_name, p.post_title, pm.meta_value FROM wp_posts as p LEFT JOIN wp_postmeta as pm ON p.ID = pm.post_id WHERE p.ID='{$result->article_id}' AND pm.meta_key = '_dwls_first_image' ");
+
+            $articles[] = [
+                'link' => '/'. $link_query[0]->post_type . '/' . $link_query[0]->post_name,
+                'image' => $link_query[0]->meta_value,
+                'name' => $link_query[0]->post_title,
+                'id' => $result->article_id
+                ];
+        }
+
+        return $articles;
+    }
 }

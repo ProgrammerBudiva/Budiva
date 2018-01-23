@@ -14,7 +14,7 @@
     $instructions = MetaBoxes\Tabs::get_post_instructions( $tabs_id, $tabs_type );
     $sertificates = MetaBoxes\Tabs::get_post_sertificates( $tabs_id, $tabs_type );
     $customs = MetaBoxes\Tabs::get_post_custom( $tabs_id, $tabs_type );
-
+    $articles = MetaBoxes\Tabs::get_articles($tabs_id);
     $tabs = new Tabs();
     ?>
 
@@ -36,6 +36,10 @@
             <li data-target="#tab_instructions" class="active">Инструкции</li>
         <?php elseif( !empty( $instructions ) ) : ?>
             <li data-target="#tab_instructions">Инструкции</li>
+        <?php endif; ?>
+        <!--Статьи-->
+        <?php if( !empty( $articles )) : ?>
+            <li data-target="#tab_articles">Статьи</li>
         <?php endif; ?>
 
         <?php if( !empty( $sertificates ) ) : ?>
@@ -81,6 +85,10 @@
             </div>
         <?php elseif( !empty( $instructions ) ) : ?>
             <div id="tab_instructions" data-type="instructions" class="product-tab"></div>
+        <?php endif; ?>
+
+        <?php if( !empty( $articles )) : ?>
+            <div id="tab_articles" data-type="articles" class="product-tab"></div>
         <?php endif; ?>
 
         <?php if( !empty( $sertificates ) ) : ?>
