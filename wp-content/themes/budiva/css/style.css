@@ -3571,6 +3571,7 @@ body.tax-product_cat {
     padding-bottom: 5px;
     margin-left: 0;
     margin-right: 0;
+    margin-bottom: 10px!important;
     border-radius: 20px;
     border-color: #00b7f1;
 }
@@ -5001,4 +5002,17 @@ input[type='date']:focus::-webkit-clear-button {
 
 .slick-slide .slide img {
     padding-right: 5px;
+}
+
+.sub-article {
+    width: fit-content;
+    margin: auto;
+}
+
+.article_name {
+    display: inline-block !important;
+}
+
+.article_tab{
+    margin-left: 3%;
 }

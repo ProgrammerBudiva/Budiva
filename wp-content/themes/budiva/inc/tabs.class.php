@@ -113,6 +113,13 @@ class Tabs
         ) );
     }
 
+    public function get_tab_articles($type, $id){
+        $articles = \MetaBoxes\Tabs::get_articles( $id);
+
+        return $this->_include('articles',
+            array('articles' => $articles));
+    }
+
     public function _include( $template, $data = array() ) {
         if( !empty( $data ) && is_array( $data ) )
             extract( $data );

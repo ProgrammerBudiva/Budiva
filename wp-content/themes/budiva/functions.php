@@ -869,5 +869,42 @@ function send_request($url, $json_value, $user, $password) {
     curl_setopt($ch,CURLOPT_RETURNTRANSFER, 1);
     $output = curl_exec($ch);
     curl_close($ch);
-//    echo($output);
+}
+
+
+add_action('wp_ajax_save_article_category', 'save_article_category');
+
+function save_article_category(){
+    global $wpdb;
+
+    $check = $wpdb->get_results('DELETE FROM wp_articles_to_categories WHERE article_id="'.$_POST["article"].'"');
+
+
+    if(count($_POST['array']) > 1){
+
+        foreach($_POST['array'] as $category) {
+
+            $wpdb->insert(
+                'wp_articles_to_categories',
+                array('category_id' => $category, 'article_id' => $_POST['article'])
+            );
+
+        }
+    }else{
+
+        $wpdb->insert(
+            'wp_articles_to_categories',
+            array('category_id' => $_POST['array'][0], 'article_id' => $_POST['article'])
+        );
+    }
+
+    $response = '';
+
+    if (empty($wpdb->last_error)){
+        $response = 'Сохранено';
+    }else{
+        $response = 'Ошибка';
+    }
+
+    echo json_encode(array('data' => $response));
 }
