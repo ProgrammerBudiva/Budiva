@@ -171,7 +171,9 @@ case 'edit':
 	}
 
 	include( ABSPATH . 'wp-admin/edit-form-advanced.php' );
-    include( ABSPATH . 'wp-admin/articles_products.php' );
+	if($post_type === 'news') {
+        include(ABSPATH . 'wp-admin/articles_products.php');
+    }
 	break;
 
 case 'editattachment':
