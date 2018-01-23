@@ -2482,6 +2482,11 @@ ul.navbar-menu-list li a {
     margin: 0 0 8px;
     border:1px solid #efefef;
     margin-bottom: 0;
+    border-bottom: 1px solid #d3d1d1;
+    box-shadow: 0px 1px 4px rgba(0,0,0,0.35);
+}
+.vacancy-item:nth-child(2) {
+    border-top: 1px solid #d3d1d1;
 }
 
 .vacancy-item-active{
