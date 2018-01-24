@@ -5026,6 +5026,10 @@ input[type='date']:focus::-webkit-clear-button {
     padding-left: 16px;
 }
 
+.works p {
+    width: 95%;
+}
+
 .vacancy-content .row .col-md-2 {
     padding-top: 13px;
 }
