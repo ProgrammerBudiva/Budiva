@@ -22,7 +22,15 @@ get_template_part( 'parts/underhead' ); ?>
                     <div class="h3 primary-header"><?= $city['name']; ?>:</div>
                     <?php if( count( $city['list'] ) == 0 ) : ?>
                         Нет рекомендуемых подрядчиков
-                    <?php else : ?>
+                    <?php else :
+                            // compare terms
+                            function cmp($a, $b)
+                            {
+                                return strcmp($a->post_title, $b->post_title); // in reverse order to get DESC
+                            }
+                            // sort terms using comparison function
+                            usort($city['list'], 'cmp');
+                        ?>
                         <?php foreach( $city['list'] as $item ) : ?>
                             <div itemscope itemtype="http://schema.org/Product" class="vacancy-item">
                                 <div class="vacancy-header" data-toggle="collapse" data-target="#builder-<?= $city['a']->term_id; ?>-<?= $item->ID; ?>" style="background:#efefef;cursor:pointer;padding:5px;">
@@ -79,6 +87,7 @@ get_template_part( 'parts/underhead' ); ?>
                                     <div class="works">
                                         <div class="h3">Виды выполняемых работ</div>
                                         <?php if( $works = get_the_terms( $item->ID, 'works' ) ) : ?>
+
 
                                             <div class="builder-works builder-works-types clearfix">
 
