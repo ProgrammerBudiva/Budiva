@@ -2,6 +2,11 @@
 /*
 	Template Name: Builders
 */
+// compare terms
+function cmp_custom($a, $b)
+{
+    return strcmp($a->post_title, $b->post_title); // in reverse order to get DESC
+}
 
 get_header();
 
@@ -22,7 +27,10 @@ get_template_part( 'parts/underhead' ); ?>
                     <div class="h3 primary-header"><?= $city['name']; ?>:</div>
                     <?php if( count( $city['list'] ) == 0 ) : ?>
                         Нет рекомендуемых подрядчиков
-                    <?php else : ?>
+                    <?php else :
+                            // sort terms using comparison function
+                            usort($city['list'], 'cmp_custom');
+                        ?>
                         <?php foreach( $city['list'] as $item ) : ?>
                             <div itemscope itemtype="http://schema.org/Product" class="vacancy-item">
                                 <div class="vacancy-header" data-toggle="collapse" data-target="#builder-<?= $city['a']->term_id; ?>-<?= $item->ID; ?>" style="background:#efefef;cursor:pointer;padding:5px;">
