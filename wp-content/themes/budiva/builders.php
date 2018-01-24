@@ -88,7 +88,6 @@ get_template_part( 'parts/underhead' ); ?>
                                         <div class="h3">Виды выполняемых работ</div>
                                         <?php if( $works = get_the_terms( $item->ID, 'works' ) ) : ?>
 
-
                                             <div class="builder-works builder-works-types clearfix">
 
                                                 <?php foreach( $works as $work ) : ?>
