@@ -346,6 +346,11 @@
     .login-register-form .tab:last-child {
         width: 50%;
     }
+
+    .vacancy-content .row .col-md-2 img {
+        width:95%;
+        margin:auto;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -638,6 +643,19 @@
         padding-right: 17px;
         margin-left: 10px;
     }
+
+
+    .vacancy-content {
+        width:95%;
+        margin:auto !important;
+    }
+
+    .works p {
+        width:100%;
+    }
+    .vacancy-content .row .col-md-2 img {
+        width:100%;
+    }
 }
 
 /*
@@ -768,6 +786,7 @@ Tiles
     .slick-slide .slide img {
         margin: auto;
     }
+
 }
 
 @media screen and (max-width: 430px) {
