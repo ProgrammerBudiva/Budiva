@@ -786,7 +786,9 @@ Tiles
     .slick-slide .slide img {
         margin: auto;
     }
-
+    .builder-works .work-item {
+        margin-left: 0 !important;
+    }
 }
 
 @media screen and (max-width: 430px) {
