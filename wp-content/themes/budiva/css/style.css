@@ -5021,3 +5021,11 @@ input[type='date']:focus::-webkit-clear-button {
 .article_tab{
     margin-left: 3%;
 }
+
+.works ul {
+    padding-left: 16px;
+}
+
+.vacancy-content .row .col-md-2 {
+    padding-top: 13px;
+}
