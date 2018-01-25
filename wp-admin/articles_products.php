@@ -22,7 +22,7 @@ $args = array(
 <?php
 $categories = get_categories( $args );
 global $wpdb;
-$check = $wpdb->get_results('Select * FROM wp_articles_to_categories WHERE  article_id="'.$post_id.'"');
+$check = $wpdb->get_results('Select * FROM wp_articles_to_categories WHERE  article_id="'.$post_ID.'"');
 $checked = [];
 foreach($check as $value){
     $checked[] = $value->category_id;
