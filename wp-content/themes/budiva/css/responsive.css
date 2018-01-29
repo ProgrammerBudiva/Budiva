@@ -153,6 +153,7 @@
 
     .product-title .one-click form {
         width: 260px;
+        /*margin-top: -16px;*/
     }
 
     .maps-container .google-map-after > table > tbody > tr > td:nth-child(2),
@@ -655,6 +656,10 @@
     }
     .vacancy-content .row .col-md-2 img {
         width:100%;
+    }
+    .product-title .one-click form {
+        width: 260px;
+        margin-top: -16px;
     }
 }
 
