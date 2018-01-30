@@ -288,30 +288,63 @@ document.addEventListener( 'wpcf7mailsent', function( event ) {
         setTimeout(function(){$('.mini-popup-1click').fadeOut('fast')},5000);
 
         ga('send', 'event', 'Buy', '1click');
-        yaCounter47259651.reachGoal('1click'); return true;
+        yaCounter47259651.reachGoal('1click');
+        var data = {
+            action: 'get_subscriber',
+            phone: event.detail.inputs[0].value,
+            type: 'order',
+            url: window.location.href,
+            name: 'Купить 1 клик'
+        };
+        jQuery.post( '/wp-admin/admin-ajax.php', data);
+        return true;
     }else if ('343' == event.detail.contactFormId){
         ga('send', 'event', 'Subscribe', 'footer');
         yaCounter47259651.reachGoal('Subscribe');
+
         var data = {
             action: 'get_subscriber',
             email: event.detail.inputs[0].value,
-            type: 'subscribe'
+            type: 'subscribe',
+            url: window.location.href,
+            name: 'Форма подписки'
         };
         jQuery.post( '/wp-admin/admin-ajax.php', data);
         return true;
     }else if ('124' == event.detail.contactFormId){
         ga('send', 'event', 'CallMe', 'header');
-        yaCounter47259651.reachGoal('CallMeHeader'); return true;
+        yaCounter47259651.reachGoal('CallMeHeader');
+        var data = {
+            action: 'get_subscriber',
+            phone: event.detail.inputs[1].value,
+            type: 'subscribe',
+            url: window.location.href,
+            name: 'Обратный звонок'
+        };
+        jQuery.post( '/wp-admin/admin-ajax.php', data);
+        return true;
     }else if ('125' == event.detail.contactFormId){
         ga('send', 'event', 'CallMe', '404');
-        yaCounter47259651.reachGoal('CallMe404'); return true;
+        yaCounter47259651.reachGoal('CallMe404');
+        var data = {
+            action: 'get_subscriber',
+            phone: event.detail.inputs[1].value,
+            type: 'subscribe',
+            url: window.location.href,
+            name: 'Обратный звонок (404)'
+        };
+        jQuery.post( '/wp-admin/admin-ajax.php', data);
+        return true;
     }else if ('1086' == event.detail.contactFormId){
         ga('send', 'event', 'GetAnswer', 'click');
         yaCounter47259651.reachGoal('GetAnswer');
         var data = {
             action: 'get_subscriber',
+            phone: event.detail.inputs[1].value,
             email: event.detail.inputs[2].value,
-            type: 'answer'
+            type: 'answer',
+            url: window.location.href,
+            name: 'Обратная связь категории'
         };
         jQuery.post( '/wp-admin/admin-ajax.php', data);
         return true;
@@ -320,7 +353,17 @@ document.addEventListener( 'wpcf7mailsent', function( event ) {
         yaCounter47259651.reachGoal('BecomeProvider'); return true;
     }else if ('198' == event.detail.contactFormId){
         ga('send', 'event', 'GetPrice', 'click');
-        yaCounter47259651.reachGoal('GetPrice'); return true;
+        yaCounter47259651.reachGoal('GetPrice');
+        var data = {
+            action: 'get_subscriber',
+            phone: event.detail.inputs[1].value ,
+            email: event.detail.inputs[2].value,
+            type: 'answer',
+            url: window.location.href,
+            name: 'Получить прайс'
+        };
+        jQuery.post( '/wp-admin/admin-ajax.php', data);
+        return true;
     }else if ('196' == event.detail.contactFormId){
         ga('send', 'event', 'GetJob', 'click');
         yaCounter47259651.reachGoal('GetJob'); return true;
@@ -329,8 +372,11 @@ document.addEventListener( 'wpcf7mailsent', function( event ) {
         yaCounter47259651.reachGoal('ORDER');
         var data = {
             action: 'get_subscriber',
+            phone: event.detail.inputs[1].value,
             email: event.detail.inputs[3].value,
-            type: 'order'
+            type: 'order',
+            url: window.location.href,
+            name: 'Заказ товара'
         };
         jQuery.post( '/wp-admin/admin-ajax.php', data);
         return true;

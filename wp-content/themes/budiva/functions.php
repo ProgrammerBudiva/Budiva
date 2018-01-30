@@ -840,6 +840,15 @@ function save_subscriber(){
     global $wpdb;
     $check_email = $wpdb->get_results('Select id FROM subscribers WHERE email="'.$_POST["email"].'"');
     $subscriber_id = $check_email[0]->id;
+
+    /**
+     * Запись в бд, всех заявок
+     */
+    $date = date("Y-m-d H:i:s");
+    $wpdb->insert(
+        'custom_requests',
+        array('email' => $_POST['email'], 'phone' => $_POST['phone'], 'form_name' => $_POST['name'], 'url_page' => $_POST['url'], 'created_at' => $date)
+    );
     //Проверка, есть ли такой email уже в базе
     if(!isset($subscriber_id)) {
         $wpdb->insert(
@@ -907,4 +916,11 @@ function save_article_category(){
     }
 
     echo json_encode(array('data' => $response));
+}
+
+add_action( 'admin_menu', 'register_my_custom_menu_page' );
+function register_my_custom_menu_page(){
+    add_menu_page(
+        'custom menu title', 'Заявки', 'manage_options', 'custom-requests-from-cf7/index.php', '', plugins_url( 'myplugin/images/icon.png' ), 6
+    );
 }
