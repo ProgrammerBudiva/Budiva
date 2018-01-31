@@ -66,6 +66,7 @@
 
     .mobile-logo img {
         max-width: 200px;
+        width: auto;
         max-height: 98px;
         padding-top: 10px;
     }
