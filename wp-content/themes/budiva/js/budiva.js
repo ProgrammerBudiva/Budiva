@@ -291,7 +291,7 @@ document.addEventListener( 'wpcf7mailsent', function( event ) {
         yaCounter47259651.reachGoal('1click');
         var data = {
             action: 'get_subscriber',
-            phone: event.detail.inputs[0].value,
+            phone: event.detail.inputs[1].value,
             type: 'order',
             url: window.location.href,
             name: 'Купить 1 клик'
