@@ -316,7 +316,7 @@ document.addEventListener( 'wpcf7mailsent', function( event ) {
         yaCounter47259651.reachGoal('CallMeHeader');
         var data = {
             action: 'get_subscriber',
-            phone: event.detail.inputs[1].value,
+            phone: event.detail.inputs[2].value,
             type: 'subscribe',
             url: window.location.href,
             name: 'Обратный звонок'
