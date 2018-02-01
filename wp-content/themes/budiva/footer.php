@@ -172,21 +172,17 @@
         if($(window).width() <= '768') {
             $('.additional-menu #menu-additional-menu > li > a').click(function(event) {
                 event.preventDefault();
+//                $('.additional-menu #menu-additional-menu > li > a').closest('.sub-menu').css('display', 'block');
+//                $('.additional-menu #menu-additional-menu > li > a').closest('.sub-menu').attr( "style", "display: block !important;" );
             });
 
             $(document).click(function (e){ // событие клика по веб-документу
-                var div = $(".sub-menu"); // тут указываем ID элемента
+                var div = $("#menu-additional-menu"); // тут указываем ID элемента
                 if (!div.is(e.target) // если клик был не по нашему блоку
                     && div.has(e.target).length === 0) { // и не по его дочерним элементам
-//                    div.hide(); // скрываем его
-                    if($('.sub-menu').filter(function(){
-                          $(this).css('display') === 'block';
-                    })){
-                        $(this).css('display', 'none');
-//                        $('.wrapper-menu-mobile').hide();
-//                        $('.wrapper-menu-mobile').slideToggle();
-                        $(this).hide();
-                    }
+
+                        $('.sub-menu').hide();
+
                 }
             });
 
