@@ -3178,7 +3178,7 @@ ul {
 }
 
 .additional-menu-list .menu-item:hover .sub-menu {
-    display: block;
+    display: block !important;
 }
 
 .additional-menu-list .sub-menu {
