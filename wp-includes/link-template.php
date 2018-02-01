@@ -3702,7 +3702,7 @@ function wp_shortlink_wp_head() {
 	if ( empty( $shortlink ) )
 		return;
 
-	echo "<link rel='shortlink' href='" . esc_url( $shortlink ) . "' />\n";
+//	echo "<link rel='shortlink' href='" . esc_url( $shortlink ) . "' />\n";
 }
 
 /**
@@ -3721,7 +3721,7 @@ function wp_shortlink_header() {
 	if ( empty($shortlink) )
 		return;
 
-	header('Link: <' . $shortlink . '>; rel=shortlink', false);
+//	header('Link: <' . $shortlink . '>; rel=shortlink', false);
 }
 
 /**
