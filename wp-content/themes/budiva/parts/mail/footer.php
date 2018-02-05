@@ -33,10 +33,10 @@
 
             <tr>
                 <th style="padding-top:10px; padding-right:5px; text-align:left;">
-                    <a href="<?= $meta['bgmp_maps'][0]; ?>" ><?= $meta['bgmp_city'][0]; ?></a>
+                    <a style="text-decoration: none;" href="<?= $meta['bgmp_maps'][0]; ?>" ><?= $meta['bgmp_city'][0]; ?></a>
                 </th>
                 <td class="hide" style="padding-top:10px; ">
-                    <a href="<?= $meta['bgmp_maps'][0]; ?>" >
+                    <a style="text-decoration: none;" href="<?= $meta['bgmp_maps'][0]; ?>" >
                         <?= $meta['bgmp_address'][0]; ?>
                     </a>
                 </td>
