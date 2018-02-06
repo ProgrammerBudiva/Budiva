@@ -24,6 +24,16 @@ $categories = get_categories( $args );
 global $wpdb;
 $check = $wpdb->get_results('Select * FROM wp_articles_to_categories WHERE  article_id="'.$post_ID.'"');
 $checked = [];
+$products = $wpdb->get_results('SELECT wp.ID, wp.post_title, wpm.meta_value FROM wp_posts wp LEFT JOIN wp_postmeta wpm ON wpm.post_id = wp.ID WHERE wp.post_type = \'product\' AND wp.post_status = \'publish\' AND wpm.meta_key = \'_yoast_wpseo_primary_product_cat\';');
+$products_arr= [];
+foreach ($products as $product){
+    $products_arr[$product->meta_value] = [
+            'id' => $product->ID,
+            'title' => $product->post_title,
+            'meta_value' => $product->meta_value
+    ];
+}
+
 foreach($check as $value){
     $checked[] = $value->category_id;
 }
@@ -39,7 +49,7 @@ foreach ($categories as $category){
             checked
         <?php    }
         ?>
-            name="test" id="<?php echo $category->term_id?>">
+            name="test" id="<?php echo $category->term_id?>" data-attr="category">
     <label for="<?php echo $category->term_id?>"><?php echo $category->name?></label>
     </div>
 
@@ -58,10 +68,24 @@ foreach ($categories as $category){
                              checked
                         <?php    }
                         ?>
-                        id="<?php echo $child_cat->term_id?>">
+                        id="<?php echo $child_cat->term_id?>" data-attr="category">
                 <label for="<?php echo $child_cat->term_id?>"><?php echo $child_cat->name?></label>
             </div>
        <?php
+            foreach ($products as $product){
+                if ($product->meta_value == $child_cat->term_id){ ?>
+                    <div class="child-cat" style="margin-left: 40px;">
+                        <input  type="checkbox" name="test"
+                            <?php
+                            if(array_search($product->ID, $checked) !== false){?>
+                                checked
+                            <?php    }
+                            ?>
+                                id="<?php echo $product->ID?>" data-attr="product">
+                        <label for="<?php echo $product->ID?>"><?php echo $product->post_title?></label>
+                    </div>
+              <?php  }
+            }
         }
 }}?>
 </form>
@@ -75,9 +99,9 @@ include( ABSPATH . 'wp-admin/admin-footer.php' );
     jQuery('#cat_art').click(function(){
         var selected = [];
         jQuery('#categories input:checked').each(function() {
-            selected.push(jQuery(this).attr('id'));
+            selected.push([jQuery(this).attr('id'), jQuery(this).attr('data-attr')]);
         });
-
+        console.log(selected);
         var data = {
             action: 'save_article_category',
             array: selected,
