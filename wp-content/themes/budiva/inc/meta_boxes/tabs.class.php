@@ -681,14 +681,14 @@ class Tabs
         global $wpdb;
 
         //Check id is product or is catedory
-        $check = $wpdb->get_row("SELECT post_type FROM wp_posts WHERE ID='{$id}'");
-        if ($check->post_type === 'product'){
-            $product = $wpdb->get_row("SELECT meta_value FROM wp_postmeta WHERE post_id='{$id}' AND meta_key='_yoast_wpseo_primary_product_cat'");
-            //If id is product? then $id= product_category
-            if(!empty($product)){
-                $id = $product->meta_value;
-            }
-        }
+//        $check = $wpdb->get_row("SELECT post_type FROM wp_posts WHERE ID='{$id}'");
+//        if ($check->post_type === 'product'){
+//            $product = $wpdb->get_row("SELECT meta_value FROM wp_postmeta WHERE post_id='{$id}' AND meta_key='_yoast_wpseo_primary_product_cat'");
+//            //If id is product? then $id= product_category
+//            if(!empty($product)){
+//                $id = $product->meta_value;
+//            }
+//        }
         //Search articles in db
         $results = $wpdb->get_results('Select * FROM wp_articles_to_categories WHERE category_id="'.$id.'" ');
 

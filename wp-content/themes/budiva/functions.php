@@ -888,14 +888,13 @@ function save_article_category(){
 
     $check = $wpdb->get_results('DELETE FROM wp_articles_to_categories WHERE article_id="'.$_POST["article"].'"');
 
-
     if(count($_POST['array']) > 1){
 
         foreach($_POST['array'] as $category) {
 
             $wpdb->insert(
                 'wp_articles_to_categories',
-                array('category_id' => $category, 'article_id' => $_POST['article'])
+                array('category_id' => $category[0], 'article_id' => $_POST['article'], 'type' => $category[1])
             );
 
         }
@@ -903,7 +902,7 @@ function save_article_category(){
 
         $wpdb->insert(
             'wp_articles_to_categories',
-            array('category_id' => $_POST['array'][0], 'article_id' => $_POST['article'])
+            array('category_id' => $_POST['array'][0][0], 'article_id' => $_POST['article'], 'type' => $_POST['array'][0][1])
         );
     }
 
