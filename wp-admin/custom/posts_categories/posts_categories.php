@@ -12,6 +12,7 @@ $categories = $wpdb->get_results('SELECT * FROM post_category');
 ?>
 
 <div class="row" style="width: 50%; margin: auto; padding-top: 10px;">
+    <a id="test" class="button button-primary" href="#my-popup">Добавить категорию</a>
     <table id="requests-table" class="display">
         <thead>
         <tr>
@@ -30,14 +31,14 @@ $categories = $wpdb->get_results('SELECT * FROM post_category');
         </tbody>
     </table>
 </div>
-<a id="test" href="#my-popup">Click me, motherfucker!</a>
+
 
 
 
 <div id="my-popup" class="mfp-hide white-popup">
     <label for="name">Укажите название</label>
     <input type="text" id="name" name="name">
-    <div class="wc-update-now button-primary" id="add_category" style="margin-top: 10px;">Click me, motherfucker!</div>
+    <div class="wc-update-now button-primary" id="add_category" style="margin-top: 10px;">Добавить</div>
 </div>
 
 <?php

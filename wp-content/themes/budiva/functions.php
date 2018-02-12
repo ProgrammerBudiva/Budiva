@@ -978,3 +978,4 @@ function save_posts_categories(){
 }
 
 add_action('wp_ajax_nopriv_get_tag_posts', array('Ajax', 'get_tag_posts'));
+add_action('wp_ajax_get_tag_posts', array('Ajax', 'get_tag_posts'));
