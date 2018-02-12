@@ -920,9 +920,14 @@ function save_article_category(){
 add_action( 'admin_menu', 'register_my_custom_menu_page' );
 function register_my_custom_menu_page(){
     add_menu_page(
-        'custom menu title', 'Заявки', 'manage_options', 'custom-requests-from-cf7/index.php', '', plugins_url( 'myplugin/images/icon.png' ), 6
+        'custom menu title', 'Заявки', 'manage_options', 'custom-requests-from-cf7/index.php', '', '', 6
     );
+    add_menu_page(
+        '', 'Тэги для статей', 'manage_options', 'posts_categories/posts_categories.php', '', '', 6    );
 }
+//function test(){
+//    require '../../../../custom/posts_categories/post_categories.php';
+//}
 
 add_action('wp_ajax_save_new_post_category', 'save_new_post_category');
 
