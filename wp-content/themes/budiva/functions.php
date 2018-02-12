@@ -923,3 +923,58 @@ function register_my_custom_menu_page(){
         'custom menu title', 'Заявки', 'manage_options', 'custom-requests-from-cf7/index.php', '', plugins_url( 'myplugin/images/icon.png' ), 6
     );
 }
+
+add_action('wp_ajax_save_new_post_category', 'save_new_post_category');
+
+function save_new_post_category(){
+    if (!empty($_POST['name'])) {
+        global $wpdb;
+
+        $wpdb->insert(
+            'post_category',
+            array('name' => $_POST['name'])
+        );
+
+        if ($wpdb->insert_id !== 0) {
+            echo json_encode(array('data' => 'success'));
+        } else {
+            echo json_encode(array('data' => 'error'));
+        }
+    }else{
+        echo json_encode(array('data' => 'error'));
+    }
+}
+
+add_action('wp_ajax_save_posts_categories', 'save_posts_categories');
+
+function save_posts_categories(){
+    global $wpdb;
+    $wpdb->get_results('DELETE FROM posts_to_categories WHERE post_id="'.$_POST["article"].'"');
+
+    if(count($_POST['array']) > 1){
+
+        foreach($_POST['array'] as $category) {
+
+            $wpdb->insert(
+                'posts_to_categories',
+                array('category_id' => $category, 'post_id' => $_POST['article'])
+            );
+        }
+    }else{
+
+        $wpdb->insert(
+            'posts_to_categories',
+            array('category_id' => $_POST['array'], 'post_id' => $_POST['article'])
+        );
+    }
+
+    if (empty($wpdb->last_error)){
+        $response = 'Сохранено';
+    }else{
+        $response = $wpdb->last_error;
+    }
+
+    echo json_encode(array('data' => $response));
+}
+
+add_action('wp_ajax_nopriv_get_tag_posts', array('Ajax', 'get_tag_posts'));
