@@ -15,7 +15,7 @@ $args = array(
     'pad_counts'   => false,
     // полный список параметров смотрите в описании функции http://wp-kama.ru/function/get_terms
 );?>
-<h2 class="hndle ui-sortable-handle">Отображать статью в категориях</h2>
+<h2 class="hndle ui-sortable-handle">Отображать статью в категориях/товарах</h2>
 <div class="articles-products">
 <form id="categories">
 

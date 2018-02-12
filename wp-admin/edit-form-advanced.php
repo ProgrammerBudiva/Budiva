@@ -728,6 +728,12 @@ do_meta_boxes(null, 'advanced', $post);
 ?>
 </div>
 <?php
+    if ($post_type === 'post' && $action === 'edit'){
+        require_once(ABSPATH . 'wp-admin/custom/posts_categories/posts_to_categories.php');
+    }
+?>
+
+<?php
 /**
  * Fires after all meta box sections have been output, before the closing #post-body div.
  *

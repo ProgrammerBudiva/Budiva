@@ -190,4 +190,56 @@ class Ajax
         echo $tabs->get_tab( $type, $post_type, $product_id, $custom_id );
         exit();
     }
+
+
+    public static function get_tag_posts(){
+
+        if (isset($_POST['tag_id']) && !empty($_POST['tag_id'])){
+            global $wpdb;
+            if($_POST['tag_id'] === 'all'){
+                $posts = $wpdb->get_results('SELECT * FROM wp_posts WHERE post_type = "post" AND post_status="publish"');
+            }else{
+                $posts = $wpdb->get_results('SELECT post_id as ID FROM posts_to_categories ptc WHERE ptc.category_id = "'. $_POST['tag_id'] .'" ');
+            }
+
+            ob_start();
+            foreach($posts as $post){
+                $post = get_post($post->ID);
+                $post = budiva_posts_right_date( $post );
+                ?>
+
+                <div itemscope itemtype="http://schema.org/NewsArticle" class="col-md-6 index-news-container news-item <?= ( get_field( 'action' ) ) ? 'type-action' : 'type-news'; ?> clearfix">
+
+                    <?php if( !get_post_meta( $post->ID, 'has_preview_outer', true ) ) : ?>
+                        <div class="index-thumbnails-box">
+                            <a href="<?php echo get_permalink($post); ?>">
+                                <?php echo  get_the_post_thumbnail( $post,'size-200x200' ); ?>
+                            </a>
+
+                            <?php if( get_field( 'action' ) ) : ?>
+                                <div class="stock"></div>
+                            <?php endif; ?>
+                        </div>
+                    <?php endif; ?>
+
+                    <div class="index-content-box clearfix" itemprop="articleBody">
+                        <p class="news-date"><?php echo $post->post_date ?></p>
+
+                        <a href="<?php echo get_permalink($post); ?>" itemprop="headline" class="h2 news-name">
+                            <?php echo  $post->post_title ?>
+                        </a>
+
+                        <p class="news-txt" itemprop="description">
+                            <?= wp_trim_words( $post->post_content, 18, ' ... ' . get_more_link( get_permalink( $post->ID ), 'подробнее' ) ); ?>
+                        </p>
+                    </div>
+                </div>
+            <?php
+            }
+            $result = ob_get_contents();
+                ob_end_clean();
+            echo $result;
+        }
+        exit();
+    }
 }
