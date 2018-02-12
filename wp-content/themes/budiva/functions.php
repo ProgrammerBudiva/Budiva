@@ -964,7 +964,7 @@ function save_posts_categories(){
 
         $wpdb->insert(
             'posts_to_categories',
-            array('category_id' => $_POST['array'], 'post_id' => $_POST['article'])
+            array('category_id' => $_POST['array'][0], 'post_id' => $_POST['article'])
         );
     }
 
