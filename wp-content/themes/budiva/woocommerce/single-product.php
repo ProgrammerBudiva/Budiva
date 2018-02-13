@@ -33,12 +33,13 @@ while( have_posts() ) : the_post();
     $attachment_ids = $product->get_gallery_attachment_ids();
     $similar_products = Budiva::get_similar_products( $post->ID, $term->slug );
     $woocommerce_shop_page_id = get_option( 'woocommerce_shop_page_id' );
+
+
     ?>
 
     <div class="content-wrap single-product">
         <div class="container">
             <div class="container-bg">
-
                 <div class="product-header clearfix">
                     <?php if( $attachment_ids ) : ?>
                         <div class="news-image has-bx clearfix">
@@ -157,7 +158,19 @@ while( have_posts() ) : the_post();
                     <?php // include( locate_template( 'parts/shop/chars.php' ) ); ?>
 
                     <?php get_template_part( 'parts/tabs' ); ?>
-
+                    <?php if($post->ID === 888){ ?>
+                </div>
+                    <div class="container" style="">
+                        <div class="container-bg container-iframe" style="height: 2265px;width: fit-content;">
+                        </div>
+                    </div>
+                <script>
+                    $(window).load(function(){
+                        $('.container-iframe').html('<iframe id="frame-shinglas"  sandbox="allow-same-origin allow-scripts allow-forms" src="https://shinglas.com.ua/raschyet-krovli/?embedded=Y" scrolling="no" style="border: 0;height: 2500px; width:1001px; transform: scale(0.9); transform-origin: 0 0;"></iframe>')
+                    });
+                </script>
+                <div class="news-content clearfix">
+                    <?php }?>
                     <?php include( locate_template( 'parts/shop/similar.php' ) ); ?>
 
                 </div>
@@ -170,7 +183,22 @@ while( have_posts() ) : the_post();
             </div>
         </div>
     </div>
+    <style>
+        .container iframe .wide-content-container{
+            width:100%;
+            max-width:100%;
+        }
+        .calculator-page .wide-content-container{
+            padding: 0 0 50px 0;
+        }
+        iframe body {
+            background: none !important;
+        }
+    </style>
 
+    <script>
+
+    </script>
 
     <?php
 
@@ -188,5 +216,3 @@ endwhile; ?>
 <?php
 
 get_footer( 'shop' );
-
-?>
