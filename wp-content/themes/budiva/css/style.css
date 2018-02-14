@@ -5065,9 +5065,12 @@ input[type='date']:focus::-webkit-clear-button {
     margin-bottom: 20px;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 .tag-item{
     margin: 0 5px;
+    margin-top: 8px;
+
 }
 #preloader {
     display: none;
