@@ -397,3 +397,16 @@ $('#tab_price .print').click(function(){
     ga('send', 'event', 'Price', 'print');
     yaCounter47259651.reachGoal('PricePrint'); return true;
 });
+
+$('.temp-price-section .view').click(function(){
+    ga('send', 'event', 'Price', 'view');
+    yaCounter47259651.reachGoal('PriceView'); return true;
+});
+$('.temp-price-section .download').click(function(){
+    ga('send', 'event', 'Price', 'download');
+    yaCounter47259651.reachGoal('PriceDownload'); return true;
+});
+$('.temp-price-section .print').click(function(){
+    ga('send', 'event', 'Price', 'print');
+    yaCounter47259651.reachGoal('PricePrint'); return true;
+});
