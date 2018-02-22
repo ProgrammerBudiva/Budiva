@@ -662,6 +662,9 @@
         width: 260px;
         margin-top: -16px;
     }
+    .temp-price-section{
+        margin-top: 10px!important;
+    }
 }
 
 /*
@@ -857,6 +860,9 @@ Tiles
     }
     .custom-next{
         right: -7%!important;
+    }
+    .temp-price-section{
+        margin-top: 25px!important;
     }
 }
 
