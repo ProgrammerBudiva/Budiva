@@ -86,6 +86,16 @@
         $(id).find('.modal-container').addClass('response-css');
     }
 
+    function charckClick() {
+        $('html, body').animate({
+            scrollTop: $("#tab-charc").offset().top - 100
+        }, 2000);
+        setTimeout(function () {
+        $('#tab-charc').click();
+        }, 500);
+
+    }
+
     $(function() {
         $("a.scroll-to-content").click(function(event) {
             event.preventDefault();

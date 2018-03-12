@@ -26,7 +26,7 @@
             <li data-target="#tab_price"><b>Прайс-лист</b></li>
         <?php endif; ?>
         <?php if( !empty( $charasteristics['content'] ) ) : ?>
-            <li data-target="#tab_charasteristics">Характеристики</li>
+            <li data-target="#tab_charasteristics" id="tab-charc">Характеристики</li>
         <?php endif; ?>
         <?php if( !empty( $videos ) ) : ?>
             <li data-target="#tab_video">Видео</li>
@@ -64,6 +64,11 @@
                     <div class="manafacture-info clearfix" itemprop="description">
                         <?= wpautop( str_replace( "http://", "https://", Images::the_content_change_image_alt( do_shortcode( get_queried_object()->description ), budiva_get_page_name() ) ) ); ?>
                     </div>
+                <?php endif; ?>
+                <?php if( !empty( $charasteristics['content'] ) ) : ?>
+                <div class="row">
+                    <a href="javascript:void(0);" onclick="charckClick();" class="tab-charc-btn view" target="_blank">Посмотреть характеристики</a>
+                </div>
                 <?php endif; ?>
             </div>
         <?php endif; ?>
