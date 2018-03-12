@@ -47,19 +47,6 @@
                     <?= wpautop( str_replace( "http://", "https://", Images::the_content_change_image_alt( do_shortcode( $cat->description ), budiva_get_page_name() ) ) ); ?>
                 </div> */ ?>
             </div>
-                        <?php if($cat->term_id === 25){ ?>
-
-                    <div class="container" style="">
-                        <div class="container-bg container-iframe" style="height: 2265px;width: fit-content;">
-                        </div>
-                    </div>
-                    <script>
-                        $(window).load(function(){
-                            $('.container-iframe').html('<iframe id="frame-shinglas"  sandbox="allow-same-origin allow-scripts allow-forms" src="https://shinglas.com.ua/raschyet-krovli/?embedded=Y" scrolling="no" style="border: 0;height: 2500px; width:1001px; transform: scale(0.9); transform-origin: 0 0;"></iframe>')
-                        });
-                    </script>
-
-                        <?php }?>
         </div>
     </div>
 </div>
