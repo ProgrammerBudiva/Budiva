@@ -158,7 +158,7 @@ while( have_posts() ) : the_post();
                     <?php // include( locate_template( 'parts/shop/chars.php' ) ); ?>
 
                     <?php get_template_part( 'parts/tabs' ); ?>
-                    <?php if($post->ID === 888){ ?>
+                   <!-- <?php if($post->ID === 888){ ?>
                 </div>
                     <div class="container" style="">
                         <div class="container-bg container-iframe" style="height: 2265px;width: fit-content;">
@@ -171,6 +171,7 @@ while( have_posts() ) : the_post();
                 </script>
                 <div class="news-content clearfix">
                     <?php }?>
+-->
                     <?php include( locate_template( 'parts/shop/similar.php' ) ); ?>
 
                 </div>
