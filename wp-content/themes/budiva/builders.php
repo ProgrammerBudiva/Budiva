@@ -82,7 +82,7 @@ get_template_part( 'parts/underhead' ); ?>
                                                     <?php if( $site ) : ?>
                                                         <tr>
                                                             <td>Сайт</td>
-                                                            <td><?= $site; ?></td>
+                                                            <td><a rel="nofollow" target="_blank" href="<?= $site; ?>"><?= $item->post_title; ?></a></td>
                                                         </tr>
                                                     <?php endif; ?>
                                                 </table>
