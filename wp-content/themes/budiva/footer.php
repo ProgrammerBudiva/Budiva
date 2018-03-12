@@ -44,7 +44,7 @@
 
         <div class="row">
             <div class="col-md-12 text-center copyright">
-                © 2015 - 2017 budiva.ua
+                © 2015 - 2018 budiva.ua
             </div>
         </div>
     </div>
