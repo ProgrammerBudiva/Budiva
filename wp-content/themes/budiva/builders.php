@@ -51,8 +51,9 @@ get_template_part( 'parts/underhead' ); ?>
                                             $phone = get_post_meta( $item->ID, 'phone', true );
                                             $email = get_post_meta( $item->ID, 'email', true );
                                             $work_time = get_post_meta( $item->ID, 'work_time', true );
+                                            $site = get_post_meta( $item->ID, 'site', true );
                                             ?>
-                                            <?php if( $address || $phone || $email || $work_time ) : ?>
+                                            <?php if( $address || $phone || $email || $work_time || $site ) : ?>
                                                 <table>
                                                     <?php if( $address ) : ?>
                                                         <tr>
@@ -76,6 +77,12 @@ get_template_part( 'parts/underhead' ); ?>
                                                         <tr>
                                                             <td>График работы</td>
                                                             <td><?= $work_time; ?></td>
+                                                        </tr>
+                                                    <?php endif; ?>
+                                                    <?php if( $site ) : ?>
+                                                        <tr>
+                                                            <td>Сайт</td>
+                                                            <td><?= $site; ?></td>
                                                         </tr>
                                                     <?php endif; ?>
                                                 </table>
