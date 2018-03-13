@@ -23,6 +23,15 @@ get_template_part( 'parts/underhead' ); ?>
             </div>
             <div class="clear"></div>
         </div>
+        <?php if( have_posts() ) : ?>
+            <?php while( have_posts() ) : the_post(); ?>
+                <div class="container content-container">
+                    <div itemprop="description" class="coop-item">
+                        <?php the_content(); ?>
+                    </div>
+                </div>
+            <?php endwhile; ?>
+        <?php endif; ?>
         <?php /* <div class="container">
             <div class="col-md-12 coop-head">
                 <h2>сотрудничая с нами, вы получаете</h2>
@@ -84,17 +93,6 @@ get_template_part( 'parts/underhead' ); ?>
         </div> */ ?>
     </div>
 
-<?php if( have_posts() ) : ?>
-    <?php while( have_posts() ) : the_post(); ?>
-        <div class="container content-container">
-            <div class="col-md-7 coop-desc">
-                <div itemprop="description" class="coop-item">
-                    <?php the_content(); ?>
-                </div>
-            </div>
-        </div>
-    <?php endwhile; ?>
-<?php endif; ?>
 
     <div class="modal fade" role="dialog" id="coopForm">
         <div class="modal-dialog modal-form-bid">
