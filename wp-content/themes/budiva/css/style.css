@@ -3188,6 +3188,10 @@ ul {
     display: none;
 }
 
+.additional-menu-list .sub-menu {
+    display: block;
+}
+
 .additional-menu-list .sub-menu .menu-item {
     float: none;
     display: block;
