@@ -3188,7 +3188,7 @@ ul {
     display: none;
 }
 
-.additional-menu-list .sub-menu {
+.additional-menu-list .sub-menu.active {
     display: block;
 }
 
