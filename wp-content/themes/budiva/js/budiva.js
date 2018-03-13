@@ -410,3 +410,9 @@ $('.temp-price-section .print').click(function(){
     ga('send', 'event', 'Price', 'print');
     yaCounter47259651.reachGoal('PricePrint'); return true;
 });
+
+if(jQuery(window).width() <= '768') {
+    jQuery('.additional-menu #menu-additional-menu > li > a').click(function(event) {
+        return false;
+    });
+}
