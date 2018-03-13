@@ -179,9 +179,9 @@
             $('.page-numbers .next, .page-numbers .prev').parent().css('border', 'none');
         }
 
-//        if($(window).width() <= '768') {
-//            $('.additional-menu #menu-additional-menu > li > a').click(function(event) {
-//                event.preventDefault();
+        if($(window).width() <= '768') {
+            $('.additional-menu #menu-additional-menu > li > a').click(function(event) {
+                event.preventDefault();
 ////                $('.additional-menu #menu-additional-menu > li > a').closest('.sub-menu').css('display', 'block');
 ////                $('.additional-menu #menu-additional-menu > li > a').closest('.sub-menu').attr( "style", "display: block !important;" );
 //            });
@@ -195,10 +195,8 @@
 ////
 //                }
 ////                console.log($(this).attr("class"));
-//            });
-////
-//
-//        }
+            });
+        }
 
         $("input.phone, input#account_telephone, input#user_telephone").mask("+38(099)999-99-99");
     });
