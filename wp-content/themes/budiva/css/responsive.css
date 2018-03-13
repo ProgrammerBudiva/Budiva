@@ -690,7 +690,7 @@ Shop additional menu
     .container-additional-menu {
         position: relative;
         z-index: 30;
-        height: auto;
+        /*height: auto;*/
 
     }
     .additional-menu {
