@@ -3177,9 +3177,7 @@ ul {
     font-weight: 700;
 }
 
-.additional-menu-list .menu-item:hover .sub-menu {
-    display: block !important;
-}
+
 
 .additional-menu-list .sub-menu {
     position: absolute;

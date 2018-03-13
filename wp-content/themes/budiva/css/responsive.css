@@ -679,6 +679,25 @@ Shop additional menu
         display: block;
     }
 
+    body{
+        cursor:pointer;
+    }
+
+    .underhead {
+        position: relative;
+        z-index: 1;
+    }
+    .container-additional-menu {
+        position: relative;
+        z-index: 30;
+        height: auto;
+
+    }
+    .additional-menu {
+        position: relative;
+        z-index: 31;
+    }
+
     .page-shop {
         padding-top: 85px;
     }
@@ -931,4 +950,10 @@ and (max-device-width : 667px)
         max-width: 118px!important;
     }
 
+}
+
+@media screen and (min-width: 650px) {
+    .additional-menu-list .menu-item:hover .sub-menu {
+        display: block !important;
+    }
 }
