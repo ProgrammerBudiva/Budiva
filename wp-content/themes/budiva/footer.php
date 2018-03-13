@@ -179,26 +179,26 @@
             $('.page-numbers .next, .page-numbers .prev').parent().css('border', 'none');
         }
 
-        if($(window).width() <= '768') {
-            $('.additional-menu #menu-additional-menu > li > a').click(function(event) {
-                event.preventDefault();
-//                $('.additional-menu #menu-additional-menu > li > a').closest('.sub-menu').css('display', 'block');
-//                $('.additional-menu #menu-additional-menu > li > a').closest('.sub-menu').attr( "style", "display: block !important;" );
-            });
+//        if($(window).width() <= '768') {
+//            $('.additional-menu #menu-additional-menu > li > a').click(function(event) {
+//                event.preventDefault();
+////                $('.additional-menu #menu-additional-menu > li > a').closest('.sub-menu').css('display', 'block');
+////                $('.additional-menu #menu-additional-menu > li > a').closest('.sub-menu').attr( "style", "display: block !important;" );
+//            });
+////
+//            $(document).click(function (e){ // событие клика по веб-документу
+//                var div = $("#menu-additional-menu"); // тут указываем ID элемента
+//                if (!div.is(e.target) // если клик был не по нашему блоку
+//                    && div.has(e.target).length === 0) { // и не по его дочерним элементам
 //
-            $(document).click(function (e){ // событие клика по веб-документу
-                var div = $("#menu-additional-menu"); // тут указываем ID элемента
-                if (!div.is(e.target) // если клик был не по нашему блоку
-                    && div.has(e.target).length === 0) { // и не по его дочерним элементам
-
-                        $('.sub-menu').slideToggle();
+//                        $('.sub-menu').slideToggle();
+////
+//                }
+////                console.log($(this).attr("class"));
+//            });
+////
 //
-                }
-//                console.log($(this).attr("class"));
-            });
-//
-
-        }
+//        }
 
         $("input.phone, input#account_telephone, input#user_telephone").mask("+38(099)999-99-99");
     });
