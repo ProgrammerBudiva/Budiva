@@ -181,7 +181,8 @@
 
         if($(window).width() <= '768') {
             $('.additional-menu #menu-additional-menu > li > a').click(function(event) {
-                event.preventDefault();
+//                event.preventDefault();
+                return false;
 ////                $('.additional-menu #menu-additional-menu > li > a').closest('.sub-menu').css('display', 'block');
 ////                $('.additional-menu #menu-additional-menu > li > a').closest('.sub-menu').attr( "style", "display: block !important;" );
 //            });
