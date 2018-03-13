@@ -412,7 +412,23 @@ $('.temp-price-section .print').click(function(){
 });
 
 if(jQuery(window).width() <= '768') {
-    jQuery('.additional-menu #menu-additional-menu > li > a').click(function(event) {
-        return false;
+    jQuery('.additional-menu #menu-additional-menu > li').click(function(event) {
+        event.preventDefault();
+        setTimeout(function(){
+            $(event.currentTarget).addClass('active');
+            $(event.currentTarget).children('.sub-menu').addClass('active');
+        },500)
+        // $(this).siblings('.sub-menu').css('display', 'block');
+    });
+    $(document).click(function (e){ // событие клика по веб-документу
+        if ($('.sub-menu.active').length !== 0) {
+            var div = $(".menu-item.active"); // тут указываем селектор элемента
+
+            if (!div.is(e.target) // если клик был не по нашему блоку
+                && div.has(e.target).length === 0) { // и не по его дочерним элементам
+                $('.sub-menu.active').removeClass('active');
+                $('.menu-item.active').removeClass('active');
+            }
+        }
     });
 }
