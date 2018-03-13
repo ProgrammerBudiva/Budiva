@@ -1027,3 +1027,9 @@ $document.ready( function() {
 })();
 
 }( jQuery, window ));
+
+if(jQuery(window).width() <= '768') {
+    jQuery('.additional-menu #menu-additional-menu > li > a').click(function(event) {
+        return false;
+    });
+}
