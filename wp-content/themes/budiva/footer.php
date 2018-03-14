@@ -25,9 +25,9 @@
                     <a itemprop="sameAs" rel="nofollow" target="_blank" href="<?= $smof_data['gp_link']; ?>">
                         <img src="<?= THEME_URI ?>/img/footer/you.png" alt="компания Budiva в youtube"/>
                     </a>
-                    <a itemprop="sameAs" rel="nofollow" target="_blank" href="<?= $smof_data['vk_link']; ?>">
-                        <img src="<?= THEME_URI ?>/img/footer/gp.png" alt="фирма Будива на google plus"/>
-                    </a>
+<!--                    <a itemprop="sameAs" rel="nofollow" target="_blank" href="--><?//= $smof_data['vk_link']; ?><!--">-->
+<!--                        <img src="--><?//= THEME_URI ?><!--/img/footer/gp.png" alt="фирма Будива на google plus"/>-->
+<!--                    </a>-->
                 </span>
             </div>
 
