@@ -17,7 +17,7 @@ Allow: /wp-includes/css/
 Allow: /wp-includes/js/
 Allow: /wp-includes/images/
 Allow: /wp-admin/admin-ajax.php
-Disallow: /cgi-bin 
+Disallow: /cgi-bin
 Disallow: /xmlrpc.php
 Disallow: /wp- 
 Disallow: /? 
@@ -33,6 +33,8 @@ Disallow: ?add-to-cart
 Disallow: *?attachment_id= 
 Disallow: /*.pdf
 Disallow: /wp-content/uploads/*/*/*.pdf
+Disallow: /works
+Disallow: /*?option=*&app_name=*
 
 User-agent: Yandex
 
