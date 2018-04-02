@@ -5,20 +5,20 @@ get_template_part( 'parts/underhead' );
 get_template_part( 'parts/additional-menu' );
 
 $data = budiva_get_shop_page_data( true, false );
-
+$field = get_field('price_file', 35 );
 ?>
 
 <div class="content-wrap">
     <div class="container page-shop">
         <div class="temp-price-section" style="width: fit-content;margin: auto;margin-top: 20px;">
-            <a href="https://budiva.ua/wp-content/uploads/2018/02/prajs-obshhij-06.02.18-1.pdf" class="tab-price-btn view"  target="_blank">Просмотреть прайс</a>
-            <a href="https://budiva.ua/wp-content/uploads/2018/02/prajs-obshhij-06.02.18-1.pdf" class="tab-price-btn download"  download="">Скачать прайс</a>
+            <a href="<?php echo $field !== false ? $field : ''?>" class="tab-price-btn view"  target="_blank">Просмотреть прайс</a>
+            <a href="<?php echo $field !== false ? $field : ''?>" class="tab-price-btn download"  download="">Скачать прайс</a>
             <a href="#" class="tab-price-btn print hide_mobile" style="margin-bottom: 0">Распечатать</a>
 
             <script>
                 $(document).ready(function() {
                     $(".temp-price-section").on('click', '.print', function() {
-                        window.open("https://budiva.ua/wp-content/uploads/2018/02/prajs-obshhij-06.02.18-1.pdf").print();
+                        window.open("<?php echo $field !== false ? $field : ''?>").print();
                         return false;
                     });
                 });
